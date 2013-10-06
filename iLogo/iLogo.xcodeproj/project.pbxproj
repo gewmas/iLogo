@@ -1,0 +1,476 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4C48FE0D18013C7300DE5F5A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C48FE0C18013C7300DE5F5A /* Foundation.framework */; };
+		4C48FE0F18013C7300DE5F5A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C48FE0E18013C7300DE5F5A /* CoreGraphics.framework */; };
+		4C48FE1118013C7300DE5F5A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C48FE1018013C7300DE5F5A /* UIKit.framework */; };
+		4C48FE1718013C7300DE5F5A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4C48FE1518013C7300DE5F5A /* InfoPlist.strings */; };
+		4C48FE1918013C7300DE5F5A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C48FE1818013C7300DE5F5A /* main.m */; };
+		4C48FE1D18013C7300DE5F5A /* iLogoAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C48FE1C18013C7300DE5F5A /* iLogoAppDelegate.m */; };
+		4C48FE2018013C7300DE5F5A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C48FE1E18013C7300DE5F5A /* Main.storyboard */; };
+		4C48FE2318013C7300DE5F5A /* iLogoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C48FE2218013C7300DE5F5A /* iLogoViewController.m */; };
+		4C48FE2518013C7300DE5F5A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4C48FE2418013C7300DE5F5A /* Images.xcassets */; };
+		4C48FE2C18013C7300DE5F5A /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C48FE2B18013C7300DE5F5A /* XCTest.framework */; };
+		4C48FE2D18013C7300DE5F5A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C48FE0C18013C7300DE5F5A /* Foundation.framework */; };
+		4C48FE2E18013C7300DE5F5A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C48FE1018013C7300DE5F5A /* UIKit.framework */; };
+		4C48FE3618013C7300DE5F5A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4C48FE3418013C7300DE5F5A /* InfoPlist.strings */; };
+		4C48FE3818013C7300DE5F5A /* iLogoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C48FE3718013C7300DE5F5A /* iLogoTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		4C48FE2F18013C7300DE5F5A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4C48FE0118013C7300DE5F5A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4C48FE0818013C7300DE5F5A;
+			remoteInfo = iLogo;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		4C48FE0918013C7300DE5F5A /* iLogo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iLogo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4C48FE0C18013C7300DE5F5A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		4C48FE0E18013C7300DE5F5A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		4C48FE1018013C7300DE5F5A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		4C48FE1418013C7300DE5F5A /* iLogo-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "iLogo-Info.plist"; sourceTree = "<group>"; };
+		4C48FE1618013C7300DE5F5A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		4C48FE1818013C7300DE5F5A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		4C48FE1A18013C7300DE5F5A /* iLogo-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "iLogo-Prefix.pch"; sourceTree = "<group>"; };
+		4C48FE1B18013C7300DE5F5A /* iLogoAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = iLogoAppDelegate.h; sourceTree = "<group>"; };
+		4C48FE1C18013C7300DE5F5A /* iLogoAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iLogoAppDelegate.m; sourceTree = "<group>"; };
+		4C48FE1F18013C7300DE5F5A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		4C48FE2118013C7300DE5F5A /* iLogoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = iLogoViewController.h; sourceTree = "<group>"; };
+		4C48FE2218013C7300DE5F5A /* iLogoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iLogoViewController.m; sourceTree = "<group>"; };
+		4C48FE2418013C7300DE5F5A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		4C48FE2A18013C7300DE5F5A /* iLogoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iLogoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4C48FE2B18013C7300DE5F5A /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		4C48FE3318013C7300DE5F5A /* iLogoTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "iLogoTests-Info.plist"; sourceTree = "<group>"; };
+		4C48FE3518013C7300DE5F5A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		4C48FE3718013C7300DE5F5A /* iLogoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iLogoTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4C48FE0618013C7300DE5F5A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4C48FE0F18013C7300DE5F5A /* CoreGraphics.framework in Frameworks */,
+				4C48FE1118013C7300DE5F5A /* UIKit.framework in Frameworks */,
+				4C48FE0D18013C7300DE5F5A /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4C48FE2718013C7300DE5F5A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4C48FE2C18013C7300DE5F5A /* XCTest.framework in Frameworks */,
+				4C48FE2E18013C7300DE5F5A /* UIKit.framework in Frameworks */,
+				4C48FE2D18013C7300DE5F5A /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4C48FE0018013C7300DE5F5A = {
+			isa = PBXGroup;
+			children = (
+				4C48FE1218013C7300DE5F5A /* iLogo */,
+				4C48FE3118013C7300DE5F5A /* iLogoTests */,
+				4C48FE0B18013C7300DE5F5A /* Frameworks */,
+				4C48FE0A18013C7300DE5F5A /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		4C48FE0A18013C7300DE5F5A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4C48FE0918013C7300DE5F5A /* iLogo.app */,
+				4C48FE2A18013C7300DE5F5A /* iLogoTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4C48FE0B18013C7300DE5F5A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4C48FE0C18013C7300DE5F5A /* Foundation.framework */,
+				4C48FE0E18013C7300DE5F5A /* CoreGraphics.framework */,
+				4C48FE1018013C7300DE5F5A /* UIKit.framework */,
+				4C48FE2B18013C7300DE5F5A /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4C48FE1218013C7300DE5F5A /* iLogo */ = {
+			isa = PBXGroup;
+			children = (
+				4C48FE1B18013C7300DE5F5A /* iLogoAppDelegate.h */,
+				4C48FE1C18013C7300DE5F5A /* iLogoAppDelegate.m */,
+				4C48FE1E18013C7300DE5F5A /* Main.storyboard */,
+				4C48FE2118013C7300DE5F5A /* iLogoViewController.h */,
+				4C48FE2218013C7300DE5F5A /* iLogoViewController.m */,
+				4C48FE2418013C7300DE5F5A /* Images.xcassets */,
+				4C48FE1318013C7300DE5F5A /* Supporting Files */,
+			);
+			path = iLogo;
+			sourceTree = "<group>";
+		};
+		4C48FE1318013C7300DE5F5A /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				4C48FE1418013C7300DE5F5A /* iLogo-Info.plist */,
+				4C48FE1518013C7300DE5F5A /* InfoPlist.strings */,
+				4C48FE1818013C7300DE5F5A /* main.m */,
+				4C48FE1A18013C7300DE5F5A /* iLogo-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		4C48FE3118013C7300DE5F5A /* iLogoTests */ = {
+			isa = PBXGroup;
+			children = (
+				4C48FE3718013C7300DE5F5A /* iLogoTests.m */,
+				4C48FE3218013C7300DE5F5A /* Supporting Files */,
+			);
+			path = iLogoTests;
+			sourceTree = "<group>";
+		};
+		4C48FE3218013C7300DE5F5A /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				4C48FE3318013C7300DE5F5A /* iLogoTests-Info.plist */,
+				4C48FE3418013C7300DE5F5A /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		4C48FE0818013C7300DE5F5A /* iLogo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4C48FE3B18013C7300DE5F5A /* Build configuration list for PBXNativeTarget "iLogo" */;
+			buildPhases = (
+				4C48FE0518013C7300DE5F5A /* Sources */,
+				4C48FE0618013C7300DE5F5A /* Frameworks */,
+				4C48FE0718013C7300DE5F5A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = iLogo;
+			productName = iLogo;
+			productReference = 4C48FE0918013C7300DE5F5A /* iLogo.app */;
+			productType = "com.apple.product-type.application";
+		};
+		4C48FE2918013C7300DE5F5A /* iLogoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4C48FE3E18013C7300DE5F5A /* Build configuration list for PBXNativeTarget "iLogoTests" */;
+			buildPhases = (
+				4C48FE2618013C7300DE5F5A /* Sources */,
+				4C48FE2718013C7300DE5F5A /* Frameworks */,
+				4C48FE2818013C7300DE5F5A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4C48FE3018013C7300DE5F5A /* PBXTargetDependency */,
+			);
+			name = iLogoTests;
+			productName = iLogoTests;
+			productReference = 4C48FE2A18013C7300DE5F5A /* iLogoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4C48FE0118013C7300DE5F5A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = iLogo;
+				LastUpgradeCheck = 0500;
+				ORGANIZATIONNAME = "Yuhua Mai";
+				TargetAttributes = {
+					4C48FE2918013C7300DE5F5A = {
+						TestTargetID = 4C48FE0818013C7300DE5F5A;
+					};
+				};
+			};
+			buildConfigurationList = 4C48FE0418013C7300DE5F5A /* Build configuration list for PBXProject "iLogo" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 4C48FE0018013C7300DE5F5A;
+			productRefGroup = 4C48FE0A18013C7300DE5F5A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4C48FE0818013C7300DE5F5A /* iLogo */,
+				4C48FE2918013C7300DE5F5A /* iLogoTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4C48FE0718013C7300DE5F5A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4C48FE2518013C7300DE5F5A /* Images.xcassets in Resources */,
+				4C48FE1718013C7300DE5F5A /* InfoPlist.strings in Resources */,
+				4C48FE2018013C7300DE5F5A /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4C48FE2818013C7300DE5F5A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4C48FE3618013C7300DE5F5A /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4C48FE0518013C7300DE5F5A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4C48FE1918013C7300DE5F5A /* main.m in Sources */,
+				4C48FE1D18013C7300DE5F5A /* iLogoAppDelegate.m in Sources */,
+				4C48FE2318013C7300DE5F5A /* iLogoViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4C48FE2618013C7300DE5F5A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4C48FE3818013C7300DE5F5A /* iLogoTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		4C48FE3018013C7300DE5F5A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4C48FE0818013C7300DE5F5A /* iLogo */;
+			targetProxy = 4C48FE2F18013C7300DE5F5A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		4C48FE1518013C7300DE5F5A /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4C48FE1618013C7300DE5F5A /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		4C48FE1E18013C7300DE5F5A /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4C48FE1F18013C7300DE5F5A /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		4C48FE3418013C7300DE5F5A /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4C48FE3518013C7300DE5F5A /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		4C48FE3918013C7300DE5F5A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		4C48FE3A18013C7300DE5F5A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		4C48FE3C18013C7300DE5F5A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "iLogo/iLogo-Prefix.pch";
+				INFOPLIST_FILE = "iLogo/iLogo-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		4C48FE3D18013C7300DE5F5A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "iLogo/iLogo-Prefix.pch";
+				INFOPLIST_FILE = "iLogo/iLogo-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		4C48FE3F18013C7300DE5F5A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/iLogo.app/iLogo";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "iLogo/iLogo-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "iLogoTests/iLogoTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		4C48FE4018013C7300DE5F5A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/iLogo.app/iLogo";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "iLogo/iLogo-Prefix.pch";
+				INFOPLIST_FILE = "iLogoTests/iLogoTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4C48FE0418013C7300DE5F5A /* Build configuration list for PBXProject "iLogo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4C48FE3918013C7300DE5F5A /* Debug */,
+				4C48FE3A18013C7300DE5F5A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4C48FE3B18013C7300DE5F5A /* Build configuration list for PBXNativeTarget "iLogo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4C48FE3C18013C7300DE5F5A /* Debug */,
+				4C48FE3D18013C7300DE5F5A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		4C48FE3E18013C7300DE5F5A /* Build configuration list for PBXNativeTarget "iLogoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4C48FE3F18013C7300DE5F5A /* Debug */,
+				4C48FE4018013C7300DE5F5A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 4C48FE0118013C7300DE5F5A /* Project object */;
+}
