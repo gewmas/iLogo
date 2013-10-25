@@ -13,14 +13,16 @@
 		4C48FE1718013C7300DE5F5A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4C48FE1518013C7300DE5F5A /* InfoPlist.strings */; };
 		4C48FE1918013C7300DE5F5A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C48FE1818013C7300DE5F5A /* main.m */; };
 		4C48FE1D18013C7300DE5F5A /* iLogoAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C48FE1C18013C7300DE5F5A /* iLogoAppDelegate.m */; };
-		4C48FE2018013C7300DE5F5A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C48FE1E18013C7300DE5F5A /* Main.storyboard */; };
 		4C48FE2318013C7300DE5F5A /* iLogoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C48FE2218013C7300DE5F5A /* iLogoViewController.m */; };
-		4C48FE2518013C7300DE5F5A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4C48FE2418013C7300DE5F5A /* Images.xcassets */; };
 		4C48FE2C18013C7300DE5F5A /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C48FE2B18013C7300DE5F5A /* XCTest.framework */; };
 		4C48FE2D18013C7300DE5F5A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C48FE0C18013C7300DE5F5A /* Foundation.framework */; };
 		4C48FE2E18013C7300DE5F5A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C48FE1018013C7300DE5F5A /* UIKit.framework */; };
 		4C48FE3618013C7300DE5F5A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4C48FE3418013C7300DE5F5A /* InfoPlist.strings */; };
 		4C48FE3818013C7300DE5F5A /* iLogoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C48FE3718013C7300DE5F5A /* iLogoTests.m */; };
+		4C54271F1804C9850043EE23 /* draw2D.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C54271E1804C9850043EE23 /* draw2D.m */; };
+		4C837BC4181A2AB90019BF47 /* iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C837BC2181A2AB90019BF47 /* iPhone.storyboard */; };
+		4C837BC6181A2C650019BF47 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C837BC5181A2C650019BF47 /* Default-568h@2x.png */; };
+		4C837BC7181A2E2E0019BF47 /* iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C837BC2181A2AB90019BF47 /* iPhone.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,15 +46,19 @@
 		4C48FE1A18013C7300DE5F5A /* iLogo-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "iLogo-Prefix.pch"; sourceTree = "<group>"; };
 		4C48FE1B18013C7300DE5F5A /* iLogoAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = iLogoAppDelegate.h; sourceTree = "<group>"; };
 		4C48FE1C18013C7300DE5F5A /* iLogoAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iLogoAppDelegate.m; sourceTree = "<group>"; };
-		4C48FE1F18013C7300DE5F5A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4C48FE2118013C7300DE5F5A /* iLogoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = iLogoViewController.h; sourceTree = "<group>"; };
 		4C48FE2218013C7300DE5F5A /* iLogoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iLogoViewController.m; sourceTree = "<group>"; };
-		4C48FE2418013C7300DE5F5A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		4C48FE2A18013C7300DE5F5A /* iLogoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iLogoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C48FE2B18013C7300DE5F5A /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		4C48FE3318013C7300DE5F5A /* iLogoTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "iLogoTests-Info.plist"; sourceTree = "<group>"; };
 		4C48FE3518013C7300DE5F5A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		4C48FE3718013C7300DE5F5A /* iLogoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iLogoTests.m; sourceTree = "<group>"; };
+		4C54271D1804C9850043EE23 /* draw2D.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = draw2D.h; sourceTree = "<group>"; };
+		4C54271E1804C9850043EE23 /* draw2D.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = draw2D.m; sourceTree = "<group>"; };
+		4C5427201804CC410043EE23 /* atomic web.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "atomic web.png"; path = "../atomic web.png"; sourceTree = "<group>"; };
+		4C837BC3181A2AB90019BF47 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/iPhone.storyboard; sourceTree = "<group>"; };
+		4C837BC5181A2C650019BF47 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		4C837BC9181A2E300019BF47 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/iPhone.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,12 +118,11 @@
 		4C48FE1218013C7300DE5F5A /* iLogo */ = {
 			isa = PBXGroup;
 			children = (
-				4C48FE1B18013C7300DE5F5A /* iLogoAppDelegate.h */,
-				4C48FE1C18013C7300DE5F5A /* iLogoAppDelegate.m */,
-				4C48FE1E18013C7300DE5F5A /* Main.storyboard */,
+				4C5427211804CC800043EE23 /* asset */,
+				4C54271C1804C9750043EE23 /* view */,
+				4C837BC2181A2AB90019BF47 /* iPhone.storyboard */,
 				4C48FE2118013C7300DE5F5A /* iLogoViewController.h */,
 				4C48FE2218013C7300DE5F5A /* iLogoViewController.m */,
-				4C48FE2418013C7300DE5F5A /* Images.xcassets */,
 				4C48FE1318013C7300DE5F5A /* Supporting Files */,
 			);
 			path = iLogo;
@@ -126,6 +131,8 @@
 		4C48FE1318013C7300DE5F5A /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				4C48FE1B18013C7300DE5F5A /* iLogoAppDelegate.h */,
+				4C48FE1C18013C7300DE5F5A /* iLogoAppDelegate.m */,
 				4C48FE1418013C7300DE5F5A /* iLogo-Info.plist */,
 				4C48FE1518013C7300DE5F5A /* InfoPlist.strings */,
 				4C48FE1818013C7300DE5F5A /* main.m */,
@@ -150,6 +157,24 @@
 				4C48FE3418013C7300DE5F5A /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		4C54271C1804C9750043EE23 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				4C54271D1804C9850043EE23 /* draw2D.h */,
+				4C54271E1804C9850043EE23 /* draw2D.m */,
+			);
+			name = view;
+			sourceTree = "<group>";
+		};
+		4C5427211804CC800043EE23 /* asset */ = {
+			isa = PBXGroup;
+			children = (
+				4C837BC5181A2C650019BF47 /* Default-568h@2x.png */,
+				4C5427201804CC410043EE23 /* atomic web.png */,
+			);
+			name = asset;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -229,9 +254,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4C48FE2518013C7300DE5F5A /* Images.xcassets in Resources */,
 				4C48FE1718013C7300DE5F5A /* InfoPlist.strings in Resources */,
-				4C48FE2018013C7300DE5F5A /* Main.storyboard in Resources */,
+				4C837BC4181A2AB90019BF47 /* iPhone.storyboard in Resources */,
+				4C837BC6181A2C650019BF47 /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -240,6 +265,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4C48FE3618013C7300DE5F5A /* InfoPlist.strings in Resources */,
+				4C837BC7181A2E2E0019BF47 /* iPhone.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -253,6 +279,7 @@
 				4C48FE1918013C7300DE5F5A /* main.m in Sources */,
 				4C48FE1D18013C7300DE5F5A /* iLogoAppDelegate.m in Sources */,
 				4C48FE2318013C7300DE5F5A /* iLogoViewController.m in Sources */,
+				4C54271F1804C9850043EE23 /* draw2D.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -283,20 +310,21 @@
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
-		4C48FE1E18013C7300DE5F5A /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				4C48FE1F18013C7300DE5F5A /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		4C48FE3418013C7300DE5F5A /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
 				4C48FE3518013C7300DE5F5A /* en */,
 			);
 			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		4C837BC2181A2AB90019BF47 /* iPhone.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4C837BC3181A2AB90019BF47 /* Base */,
+				4C837BC9181A2E300019BF47 /* en */,
+			);
+			name = iPhone.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -377,12 +405,12 @@
 		4C48FE3C18013C7300DE5F5A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "iLogo/iLogo-Prefix.pch";
 				INFOPLIST_FILE = "iLogo/iLogo-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -390,12 +418,12 @@
 		4C48FE3D18013C7300DE5F5A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "iLogo/iLogo-Prefix.pch";
 				INFOPLIST_FILE = "iLogo/iLogo-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -461,6 +489,7 @@
 				4C48FE3D18013C7300DE5F5A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4C48FE3E18013C7300DE5F5A /* Build configuration list for PBXNativeTarget "iLogoTests" */ = {
 			isa = XCConfigurationList;
@@ -469,6 +498,7 @@
 				4C48FE4018013C7300DE5F5A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
