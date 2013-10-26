@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface iLogoViewController : UIViewController
+@interface iLogoViewController : UIViewController<UITextFieldDelegate>
+
+-(IBAction) doneEditing:(id) sender;
+-(IBAction) bgTouched:(id) sender;
 
 @end
