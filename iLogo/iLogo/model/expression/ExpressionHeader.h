@@ -11,6 +11,10 @@
 
 #import "Expression.h"
 #import "ForwardExpression.h"
+#import "RightExpression.h"
+
+#import "RepeatExpression.h"
+
 #import "VariableExpression.h"
 
 #endif

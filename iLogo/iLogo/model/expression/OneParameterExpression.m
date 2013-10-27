@@ -17,16 +17,28 @@
 
 @synthesize expression;
 
-- (id)initWithParameter:(NSMutableArray*)commandList
+- (id)initWithParameter:(NSMutableArray*)commandList andModel:(Model*)myModel;
 {
-    return [super initWithParameter:commandList];
+    return [super initWithParameter:commandList andModel:myModel];
 }
 
 - (void)convert:(NSMutableArray*)commandList
 {
     [commandList removeObjectAtIndex:0];
     
-    expression = (Expression*)[[VariableExpression alloc] initWithParameter:commandList];
+    NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
+    
+    //isNum
+    if([formatter numberFromString:[commandList firstObject]]){
+        expression = (Expression*)[[VariableExpression alloc] initWithParameter:commandList andModel:[self model]];
+    }
+    else{    //notNum
+        
+        
+    }
+    
+
+    
 }
 
 @end

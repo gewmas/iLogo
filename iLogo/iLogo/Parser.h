@@ -7,9 +7,16 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Model.h"
+#import "ExpressionHeader.h"
+
+@class Model;
+@class Expression;
 
 @interface Parser : NSObject
 
+- (id)initWithModel:(Model*)model;
 - (NSMutableArray *)execute:(NSMutableArray*)commandInput;
+- (Expression *)parse:(NSMutableArray*)commandInput;
 
 @end

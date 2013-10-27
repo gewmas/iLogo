@@ -8,12 +8,14 @@
 
 #import "Expression.h"
 
+
+
 @interface OneParameterExpression : Expression
 {
     Expression *expression;
 }
 
 @property (nonatomic) Expression *expression;
-- (id)initWithParameter:(NSMutableArray*)commandList;
+- (id)initWithParameter:(NSMutableArray*)commandList andModel:(Model*)model;
 
 @end

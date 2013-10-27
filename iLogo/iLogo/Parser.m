@@ -7,9 +7,25 @@
 //
 
 #import "Parser.h"
-#import "ExpressionHeader.h"
+
+@interface Parser ()
+
+@property (nonatomic) Model *model;
+
+@end
 
 @implementation Parser
+
+- (id)initWithModel:(Model*)model
+{
+    self = [super init];
+    
+    if(self){
+        _model = model;
+    }
+    
+    return self;
+}
 
 - (NSMutableArray *)execute:(NSMutableArray*)commandInput
 {
@@ -28,11 +44,17 @@
     NSString *s = [commandInput firstObject];
     
     if ([s isEqualToString:@"fd"]) {
-        return [[ForwardExpression alloc] initWithParameter:commandInput];
-    }else if([s isEqualToString:@"rt"]){
-        
+        return [[ForwardExpression alloc] initWithParameter:commandInput andModel:_model];
+    }
+    else if([s isEqualToString:@"rt"]){
+        return [[RightExpression alloc] initWithParameter:commandInput andModel:_model];
     }
     
+    else if([s isEqualToString:@"repeat"]){
+        return [[RepeatExpression alloc] initWithParameter:commandInput andModel:_model];
+    }
+    
+    assert(false);
     return nil;
 }
 

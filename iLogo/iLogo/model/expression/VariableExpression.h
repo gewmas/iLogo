@@ -10,7 +10,7 @@
 
 @interface VariableExpression : Expression
 
-- (id)initWithParameter:(NSArray*)commandList;
+- (id)initWithParameter:(NSMutableArray*)commandList  andModel:(Model*)myModel;
 - (double)value;
 
 @end

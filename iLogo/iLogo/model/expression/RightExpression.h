@@ -10,4 +10,7 @@
 
 @interface RightExpression : OneParameterExpression
 
+- (NSMutableArray*)evaluate:(TurtleCommand*)lastTurtleCommand;
+
+
 @end

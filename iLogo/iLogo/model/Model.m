@@ -7,7 +7,6 @@
 //
 
 #import "Model.h"
-#import "Parser.h"
 
 #import "Expression.h"
 
@@ -28,16 +27,22 @@
     self = [super init];
     
     if(self){
-        _parser = [[Parser alloc] init];
+        _parser = [[Parser alloc] initWithModel:self];
     }
-    
     return self;
+}
+
+
+- (Parser*)parser
+{
+    return _parser;
 }
 
 - (void)updateTrace:(NSString*)userInput andTurtle:(Turtle*)turtle
 {
     _turtle = turtle;
     
+    userInput = [userInput stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
     NSArray *array = [userInput componentsSeparatedByString:@" "];
     NSMutableArray *splitArray = [[NSMutableArray alloc] initWithArray:array];
 

@@ -27,7 +27,7 @@
     self = [super init];
     if (self) {
         _x = [[UIScreen mainScreen] bounds].size.width/2;
-        _y = [[UIScreen mainScreen] bounds].size.height*2/3;
+        _y = [[UIScreen mainScreen] bounds].size.height/3;
         _direction = -90.0;
     }
     return self;

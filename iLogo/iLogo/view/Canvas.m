@@ -8,10 +8,18 @@
 
 #import "Canvas.h"
 
+typedef enum{
+    UP=1, DOWN=0, LEFT=3, RIGHT=2
+} DIRECTION;
+
 @interface Canvas()
 
 @property (nonatomic) int val;
 @property (nonatomic) Turtle *turtle;
+
+@property (nonatomic) UIImageView *animationView;
+
+@property (nonatomic) DIRECTION d;
 
 @end
 
@@ -67,38 +75,47 @@
         prevY = currY;
     }
     
-//    //test
-//    int x = 10, y = 10;
-//    int x2, y2, x3, y3,x4, y4;
-//    x2 = 50;
-//    y2 = 100;
-//    x3 = 200;
-//    y3 = 200;
-//    x4 = 200;
-//    y4 = 50;
-//    
-//    CGContextRef context = UIGraphicsGetCurrentContext();
-//    CGContextSetLineWidth(context, 10);
-//    
-//    // line 1
-//    CGContextSetStrokeColorWithColor(context, [UIColor yellowColor].CGColor);
-//    CGContextMoveToPoint(context, _val, y);
-//    CGContextAddLineToPoint(context, x2, y2);
-//    CGContextStrokePath(context);
-//    
-//    // line 2
-//    CGContextSetStrokeColorWithColor(context, [UIColor blueColor].CGColor);
-//    CGContextMoveToPoint(context, x, y);
-//    CGContextAddLineToPoint(context, x3, y3);
-//    CGContextStrokePath(context);
-//    
-//    // line 3
-//    CGContextSetStrokeColorWithColor(context, [UIColor redColor].CGColor);
-//    CGContextMoveToPoint(context, x, y);
-//    CGContextAddLineToPoint(context, x4, y4);
-//    CGContextStrokePath(context);
+    TurtleCommand *lastCommand = [turtleCommand lastObject];
+    if ([lastCommand direction] <= -45 && [lastCommand direction] >= -135) {
+        _d = UP;
+    }else if([lastCommand direction] <= 135 && [lastCommand direction] >= 45){
+        _d = DOWN;
+    }else if([lastCommand direction] <= 45 && [lastCommand direction] >= -45){
+        _d = RIGHT;
+    }else{
+        _d = LEFT;
+    }
     
-//    NSLog(@"%d,%d--%d,%d--%d,%d",x2,y2,x3,y3,x4,y4);
+    UIImage *image = [UIImage imageNamed:@"turtle.png"];
+    
+    CGRect fromRect = CGRectMake(0, _d*32, 32, 32);
+    CGImageRef drawImage = CGImageCreateWithImageInRect(image.CGImage, fromRect);
+    UIImage *image1 = [UIImage imageWithCGImage:drawImage];
+    
+    fromRect = CGRectMake(32, _d*32, 32, 32);
+    drawImage = CGImageCreateWithImageInRect(image.CGImage, fromRect);
+    UIImage *image2 = [UIImage imageWithCGImage:drawImage];
+
+    fromRect = CGRectMake(64, _d*32, 32, 32);
+    drawImage = CGImageCreateWithImageInRect(image.CGImage, fromRect);
+    UIImage *image3 = [UIImage imageWithCGImage:drawImage];
+    
+//    CGImageRelease(drawImage);
+    
+    NSArray *animationArray=[NSArray arrayWithObjects:
+                             image1,
+                             image2,
+                             image3,
+                             nil];
+    [_animationView removeFromSuperview];
+    _animationView=[[UIImageView alloc]initWithFrame:CGRectMake(prevX-16, prevY-16,32, 32)];
+//    _animationView.backgroundColor=[UIColor purpleColor];
+    _animationView.animationImages=animationArray;
+    _animationView.animationDuration=1.5;
+    _animationView.animationRepeatCount=0;
+    [_animationView startAnimating];
+    [self addSubview:_animationView];
+ 
 }
 
 

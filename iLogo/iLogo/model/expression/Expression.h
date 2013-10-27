@@ -8,11 +8,25 @@
 
 #import <Foundation/Foundation.h>
 #import "TurtleCommand.h"
+//#import "Model.h"
+//#import "Parser.h"
+
+@class Model;
+@class Parser;
 
 @interface Expression : NSObject
+{
+    
+}
 
-- (id)initWithParameter:(NSMutableArray*)commandList;
+//@property (nonatomic) Model *model;
+//@property (nonatomic) Parser *parser;
+
+- (id)initWithParameter:(NSMutableArray*)commandList andModel:(Model*)model;
 - (void)convert:(NSMutableArray*)commandList;
 - (NSMutableArray*)evaluate:(TurtleCommand*)lastTurtleCommand;
+
+- (Model*)model;
+- (Parser*)parser;
 
 @end

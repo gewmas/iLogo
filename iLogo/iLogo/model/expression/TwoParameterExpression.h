@@ -10,6 +10,6 @@
 
 @interface TwoParameterExpression : Expression
 
-- (id)initWithParameter:(NSArray*)commandList;
+- (id)initWithParameter:(NSMutableArray*)commandList  andModel:(Model*)myModel;
 
 @end

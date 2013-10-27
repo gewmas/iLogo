@@ -16,23 +16,31 @@
 
 @implementation VariableExpression
 
-- (id)initWithParameter:(NSMutableArray*)commandList
+- (id)initWithParameter:(NSMutableArray*)commandList  andModel:(Model*)myModel;
 {
-    self = [super init];
+    self = [super initWithParameter:commandList andModel:myModel];
     
     if (self) {
-        NSString *s = [commandList firstObject];
-        _value = [s doubleValue];
         
-        [commandList removeObjectAtIndex:0];
+        
     }
     
     return self;
+}
+
+- (void)convert:(NSMutableArray*)commandList
+{
+    NSString *s = [commandList firstObject];
+    _value = [s doubleValue];
+    
+    [commandList removeObjectAtIndex:0];
 }
 
 - (double)value
 {
     return _value;
 }
+
+
 
 @end
