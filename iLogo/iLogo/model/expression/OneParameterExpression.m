@@ -11,22 +11,22 @@
 
 @interface OneParameterExpression()
 
-@property (nonatomic) Expression *expression;
-
 @end
 
 @implementation OneParameterExpression
 
-- (id)initWithParameter:(NSArray*)commandList
+@synthesize expression;
+
+- (id)initWithParameter:(NSMutableArray*)commandList
 {
     return [super initWithParameter:commandList];
 }
 
-- (void)convert:(NSArray*)commandList
+- (void)convert:(NSMutableArray*)commandList
 {
-    [commandList delete:[commandList firstObject]];
+    [commandList removeObjectAtIndex:0];
     
-    _expression = (Expression*)[[VariableExpression alloc] initWithParameter:[commandList firstObject]];
+    expression = (Expression*)[[VariableExpression alloc] initWithParameter:commandList];
 }
 
 @end

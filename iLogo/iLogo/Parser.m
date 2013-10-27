@@ -11,7 +11,7 @@
 
 @implementation Parser
 
-- (NSMutableArray *)execute:(NSArray*)commandInput
+- (NSMutableArray *)execute:(NSMutableArray*)commandInput
 {
     NSMutableArray *expressionList = [[NSMutableArray alloc] init];
     
@@ -23,7 +23,7 @@
     return expressionList;
 }
 
-- (Expression *)parse:(NSArray*)commandInput
+- (Expression *)parse:(NSMutableArray*)commandInput
 {
     NSString *s = [commandInput firstObject];
     

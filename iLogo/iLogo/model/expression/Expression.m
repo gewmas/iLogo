@@ -10,7 +10,7 @@
 
 @implementation Expression
 
-- (id)initWithParameter:(NSArray*)commandList
+- (id)initWithParameter:(NSMutableArray*)commandList
 {
     self = [super init];
     

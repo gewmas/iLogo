@@ -7,9 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Turtle.h"
 
 @interface Model : NSObject
 
-- (void)updateTrace:(NSString*)userInput;
+- (void)updateTrace:(NSString*)userInput andTurtle:(Turtle*)turtle;
 
 @end

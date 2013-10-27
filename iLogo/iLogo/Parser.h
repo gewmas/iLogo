@@ -10,6 +10,6 @@
 
 @interface Parser : NSObject
 
-- (NSMutableArray *)execute:(NSArray*)commandInput;
+- (NSMutableArray *)execute:(NSMutableArray*)commandInput;
 
 @end

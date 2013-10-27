@@ -7,6 +7,7 @@
 //
 
 #import "Turtle.h"
+#import "TurtleCommand.h"
 
 @interface Turtle()
 
@@ -23,6 +24,7 @@
     self = [super init];
     if (self) {
         _turtleTrace = [[TurtleTrace alloc] init];
+        [self addTurtleCommand:[[TurtleCommand alloc] init]];
     }
     return self;
 }
@@ -44,6 +46,11 @@
 - (void)addTurtleCommand:(TurtleCommand *)turtleCommand
 {
     [_turtleTrace addTurtleCommand:turtleCommand];
+}
+
+- (TurtleCommand*)getLastCommand
+{
+    return [[_turtleTrace turtleCommand] lastObject];
 }
 
 @end

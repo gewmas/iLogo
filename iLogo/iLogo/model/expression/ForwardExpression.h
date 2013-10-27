@@ -11,6 +11,6 @@
 @interface ForwardExpression : OneParameterExpression
 
 //- (id)initWithParameter:(NSArray*)commandList;
-
+- (NSMutableArray*)evaluate:(TurtleCommand*)lastTurtleCommand;
 
 @end

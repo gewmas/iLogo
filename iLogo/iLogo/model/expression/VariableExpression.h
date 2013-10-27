@@ -11,5 +11,6 @@
 @interface VariableExpression : Expression
 
 - (id)initWithParameter:(NSArray*)commandList;
+- (double)value;
 
 @end

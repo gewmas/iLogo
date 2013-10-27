@@ -7,10 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "TurtleCommand.h"
 
 @interface Expression : NSObject
 
-- (id)initWithParameter:(NSArray*)commandList;
-- (void)convert:(NSArray*)commandList;
+- (id)initWithParameter:(NSMutableArray*)commandList;
+- (void)convert:(NSMutableArray*)commandList;
+- (NSMutableArray*)evaluate:(TurtleCommand*)lastTurtleCommand;
 
 @end

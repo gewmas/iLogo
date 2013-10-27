@@ -67,10 +67,10 @@
 
     _model = [[Model alloc] init];
     _turtle = [[Turtle alloc] init];
-    [_turtle addTurtleCommand:[[TurtleCommand alloc] initWithParameter:100 andY:100]];
-    [_turtle addTurtleCommand:[[TurtleCommand alloc] initWithParameter:150 andY:100]];
-    [_turtle addTurtleCommand:[[TurtleCommand alloc] initWithParameter:100 andY:200]];
-    [_turtle addTurtleCommand:[[TurtleCommand alloc] initWithParameter:198 andY:300]];
+//    [_turtle addTurtleCommand:[[TurtleCommand alloc] initWithParameter:100 andY:100]];
+//    [_turtle addTurtleCommand:[[TurtleCommand alloc] initWithParameter:150 andY:100]];
+//    [_turtle addTurtleCommand:[[TurtleCommand alloc] initWithParameter:100 andY:200]];
+//    [_turtle addTurtleCommand:[[TurtleCommand alloc] initWithParameter:198 andY:300]];
 
     [_canvas drawTurtle:_turtle];
     NSLog(@"view did load!");
@@ -84,7 +84,8 @@
         return;
     }
     
-    [_model updateTrace:_command];
+    NSLog(@"Calling model!");
+    [_model updateTrace:_command andTurtle:_turtle];
 //    NSArray *splitArray = [_command componentsSeparatedByString:@" "];
     
 //    NSLog(@"%@", splitArray);
@@ -93,8 +94,9 @@
     
 //    [_turtle addTurtleCommand:[[TurtleCommand alloc] initWithParameter:[splitArray[0] doubleValue] andY:[splitArray[1] doubleValue]]];
 //    [_canvas drawTurtle:_turtle];
-//    [_canvas setNeedsDisplay];
-//    
+    
+    [_canvas setNeedsDisplay];
+    
     [commentTextField setText:@""];
 }
 
