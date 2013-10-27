@@ -19,10 +19,21 @@
 		4C48FE2E18013C7300DE5F5A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C48FE1018013C7300DE5F5A /* UIKit.framework */; };
 		4C48FE3618013C7300DE5F5A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4C48FE3418013C7300DE5F5A /* InfoPlist.strings */; };
 		4C48FE3818013C7300DE5F5A /* iLogoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C48FE3718013C7300DE5F5A /* iLogoTests.m */; };
-		4C54271F1804C9850043EE23 /* draw2D.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C54271E1804C9850043EE23 /* draw2D.m */; };
 		4C837BC4181A2AB90019BF47 /* iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C837BC2181A2AB90019BF47 /* iPhone.storyboard */; };
 		4C837BC6181A2C650019BF47 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C837BC5181A2C650019BF47 /* Default-568h@2x.png */; };
 		4C837BC7181A2E2E0019BF47 /* iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C837BC2181A2AB90019BF47 /* iPhone.storyboard */; };
+		4C837BD1181C755D0019BF47 /* Canvas.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C837BD0181C755D0019BF47 /* Canvas.m */; };
+		4C837BD5181C7D8B0019BF47 /* TurtleTrace.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C837BD4181C7D8B0019BF47 /* TurtleTrace.m */; };
+		4C837BD8181C88C90019BF47 /* Turtle.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C837BD7181C88C90019BF47 /* Turtle.m */; };
+		4C837BDC181C88E60019BF47 /* TurtleCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C837BDB181C88E60019BF47 /* TurtleCommand.m */; };
+		4C837BDF181C972F0019BF47 /* Model.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C837BDE181C972F0019BF47 /* Model.m */; };
+		4C837BE2181C973A0019BF47 /* Parser.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C837BE1181C973A0019BF47 /* Parser.m */; };
+		4C837BE6181CA2550019BF47 /* Expression.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C837BE5181CA2550019BF47 /* Expression.m */; };
+		4C837BE9181CA2680019BF47 /* ForwardExpression.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C837BE8181CA2680019BF47 /* ForwardExpression.m */; };
+		4C837BED181CA5F90019BF47 /* RightExpression.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C837BEC181CA5F90019BF47 /* RightExpression.m */; };
+		4C837BF0181CA9140019BF47 /* TwoParameterExpression.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C837BEF181CA9140019BF47 /* TwoParameterExpression.m */; };
+		4C837BF3181CA9330019BF47 /* OneParameterExpression.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C837BF2181CA9330019BF47 /* OneParameterExpression.m */; };
+		4C837BF6181CB32A0019BF47 /* VariableExpression.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C837BF5181CB32A0019BF47 /* VariableExpression.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,12 +64,35 @@
 		4C48FE3318013C7300DE5F5A /* iLogoTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "iLogoTests-Info.plist"; sourceTree = "<group>"; };
 		4C48FE3518013C7300DE5F5A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		4C48FE3718013C7300DE5F5A /* iLogoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iLogoTests.m; sourceTree = "<group>"; };
-		4C54271D1804C9850043EE23 /* draw2D.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = draw2D.h; sourceTree = "<group>"; };
-		4C54271E1804C9850043EE23 /* draw2D.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = draw2D.m; sourceTree = "<group>"; };
 		4C5427201804CC410043EE23 /* atomic web.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "atomic web.png"; path = "../atomic web.png"; sourceTree = "<group>"; };
 		4C837BC3181A2AB90019BF47 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/iPhone.storyboard; sourceTree = "<group>"; };
 		4C837BC5181A2C650019BF47 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		4C837BC9181A2E300019BF47 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/iPhone.strings; sourceTree = "<group>"; };
+		4C837BCF181C755D0019BF47 /* Canvas.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Canvas.h; path = view/Canvas.h; sourceTree = "<group>"; };
+		4C837BD0181C755D0019BF47 /* Canvas.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Canvas.m; path = view/Canvas.m; sourceTree = "<group>"; };
+		4C837BD3181C7D8B0019BF47 /* TurtleTrace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TurtleTrace.h; path = model/TurtleTrace.h; sourceTree = "<group>"; };
+		4C837BD4181C7D8B0019BF47 /* TurtleTrace.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TurtleTrace.m; path = model/TurtleTrace.m; sourceTree = "<group>"; };
+		4C837BD6181C88C90019BF47 /* Turtle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Turtle.h; path = model/Turtle.h; sourceTree = "<group>"; };
+		4C837BD7181C88C90019BF47 /* Turtle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Turtle.m; path = model/Turtle.m; sourceTree = "<group>"; };
+		4C837BDA181C88E60019BF47 /* TurtleCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TurtleCommand.h; path = turtle/TurtleCommand.h; sourceTree = "<group>"; };
+		4C837BDB181C88E60019BF47 /* TurtleCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TurtleCommand.m; path = turtle/TurtleCommand.m; sourceTree = "<group>"; };
+		4C837BDD181C972F0019BF47 /* Model.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Model.h; path = model/Model.h; sourceTree = "<group>"; };
+		4C837BDE181C972F0019BF47 /* Model.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Model.m; path = model/Model.m; sourceTree = "<group>"; };
+		4C837BE0181C973A0019BF47 /* Parser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Parser.h; sourceTree = "<group>"; };
+		4C837BE1181C973A0019BF47 /* Parser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Parser.m; sourceTree = "<group>"; };
+		4C837BE4181CA2550019BF47 /* Expression.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Expression.h; path = model/expression/Expression.h; sourceTree = "<group>"; };
+		4C837BE5181CA2550019BF47 /* Expression.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Expression.m; path = model/expression/Expression.m; sourceTree = "<group>"; };
+		4C837BE7181CA2680019BF47 /* ForwardExpression.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ForwardExpression.h; path = model/expression/ForwardExpression.h; sourceTree = "<group>"; };
+		4C837BE8181CA2680019BF47 /* ForwardExpression.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ForwardExpression.m; path = model/expression/ForwardExpression.m; sourceTree = "<group>"; };
+		4C837BEA181CA49F0019BF47 /* ExpressionHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ExpressionHeader.h; path = model/expression/ExpressionHeader.h; sourceTree = "<group>"; };
+		4C837BEB181CA5F90019BF47 /* RightExpression.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RightExpression.h; path = model/expression/RightExpression.h; sourceTree = "<group>"; };
+		4C837BEC181CA5F90019BF47 /* RightExpression.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RightExpression.m; path = model/expression/RightExpression.m; sourceTree = "<group>"; };
+		4C837BEE181CA9140019BF47 /* TwoParameterExpression.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TwoParameterExpression.h; path = model/expression/TwoParameterExpression.h; sourceTree = "<group>"; };
+		4C837BEF181CA9140019BF47 /* TwoParameterExpression.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TwoParameterExpression.m; path = model/expression/TwoParameterExpression.m; sourceTree = "<group>"; };
+		4C837BF1181CA9330019BF47 /* OneParameterExpression.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OneParameterExpression.h; path = model/expression/OneParameterExpression.h; sourceTree = "<group>"; };
+		4C837BF2181CA9330019BF47 /* OneParameterExpression.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OneParameterExpression.m; path = model/expression/OneParameterExpression.m; sourceTree = "<group>"; };
+		4C837BF4181CB32A0019BF47 /* VariableExpression.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VariableExpression.h; path = model/expression/VariableExpression.h; sourceTree = "<group>"; };
+		4C837BF5181CB32A0019BF47 /* VariableExpression.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VariableExpression.m; path = model/expression/VariableExpression.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +152,9 @@
 		4C48FE1218013C7300DE5F5A /* iLogo */ = {
 			isa = PBXGroup;
 			children = (
+				4C837BEA181CA49F0019BF47 /* ExpressionHeader.h */,
+				4C837BD9181C88CF0019BF47 /* turtle */,
+				4C837BD2181C7B6D0019BF47 /* model */,
 				4C5427211804CC800043EE23 /* asset */,
 				4C54271C1804C9750043EE23 /* view */,
 				4C837BC2181A2AB90019BF47 /* iPhone.storyboard */,
@@ -162,8 +199,8 @@
 		4C54271C1804C9750043EE23 /* view */ = {
 			isa = PBXGroup;
 			children = (
-				4C54271D1804C9850043EE23 /* draw2D.h */,
-				4C54271E1804C9850043EE23 /* draw2D.m */,
+				4C837BCF181C755D0019BF47 /* Canvas.h */,
+				4C837BD0181C755D0019BF47 /* Canvas.m */,
 			);
 			name = view;
 			sourceTree = "<group>";
@@ -175,6 +212,50 @@
 				4C5427201804CC410043EE23 /* atomic web.png */,
 			);
 			name = asset;
+			sourceTree = "<group>";
+		};
+		4C837BD2181C7B6D0019BF47 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				4C837BE3181CA2220019BF47 /* expression */,
+				4C837BDD181C972F0019BF47 /* Model.h */,
+				4C837BDE181C972F0019BF47 /* Model.m */,
+				4C837BE0181C973A0019BF47 /* Parser.h */,
+				4C837BE1181C973A0019BF47 /* Parser.m */,
+			);
+			name = model;
+			sourceTree = "<group>";
+		};
+		4C837BD9181C88CF0019BF47 /* turtle */ = {
+			isa = PBXGroup;
+			children = (
+				4C837BD6181C88C90019BF47 /* Turtle.h */,
+				4C837BD7181C88C90019BF47 /* Turtle.m */,
+				4C837BD3181C7D8B0019BF47 /* TurtleTrace.h */,
+				4C837BD4181C7D8B0019BF47 /* TurtleTrace.m */,
+				4C837BDA181C88E60019BF47 /* TurtleCommand.h */,
+				4C837BDB181C88E60019BF47 /* TurtleCommand.m */,
+			);
+			name = turtle;
+			sourceTree = "<group>";
+		};
+		4C837BE3181CA2220019BF47 /* expression */ = {
+			isa = PBXGroup;
+			children = (
+				4C837BE4181CA2550019BF47 /* Expression.h */,
+				4C837BE5181CA2550019BF47 /* Expression.m */,
+				4C837BE7181CA2680019BF47 /* ForwardExpression.h */,
+				4C837BE8181CA2680019BF47 /* ForwardExpression.m */,
+				4C837BEB181CA5F90019BF47 /* RightExpression.h */,
+				4C837BEC181CA5F90019BF47 /* RightExpression.m */,
+				4C837BEE181CA9140019BF47 /* TwoParameterExpression.h */,
+				4C837BEF181CA9140019BF47 /* TwoParameterExpression.m */,
+				4C837BF1181CA9330019BF47 /* OneParameterExpression.h */,
+				4C837BF2181CA9330019BF47 /* OneParameterExpression.m */,
+				4C837BF4181CB32A0019BF47 /* VariableExpression.h */,
+				4C837BF5181CB32A0019BF47 /* VariableExpression.m */,
+			);
+			name = expression;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -277,9 +358,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				4C48FE1918013C7300DE5F5A /* main.m in Sources */,
+				4C837BD5181C7D8B0019BF47 /* TurtleTrace.m in Sources */,
+				4C837BED181CA5F90019BF47 /* RightExpression.m in Sources */,
 				4C48FE1D18013C7300DE5F5A /* iLogoAppDelegate.m in Sources */,
+				4C837BDF181C972F0019BF47 /* Model.m in Sources */,
+				4C837BD8181C88C90019BF47 /* Turtle.m in Sources */,
 				4C48FE2318013C7300DE5F5A /* iLogoViewController.m in Sources */,
-				4C54271F1804C9850043EE23 /* draw2D.m in Sources */,
+				4C837BDC181C88E60019BF47 /* TurtleCommand.m in Sources */,
+				4C837BE2181C973A0019BF47 /* Parser.m in Sources */,
+				4C837BD1181C755D0019BF47 /* Canvas.m in Sources */,
+				4C837BF3181CA9330019BF47 /* OneParameterExpression.m in Sources */,
+				4C837BF6181CB32A0019BF47 /* VariableExpression.m in Sources */,
+				4C837BF0181CA9140019BF47 /* TwoParameterExpression.m in Sources */,
+				4C837BE9181CA2680019BF47 /* ForwardExpression.m in Sources */,
+				4C837BE6181CA2550019BF47 /* Expression.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

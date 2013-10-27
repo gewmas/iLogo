@@ -7,7 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Turtle.h"
 
-@interface draw2D : UIView
+@interface Canvas : UIView
+{
+    
+}
+
+- (void)drawTurtle:(Turtle*)turtle;
+
+- (void) test;
+- (void) setNum : (int)temp;
 
 @end

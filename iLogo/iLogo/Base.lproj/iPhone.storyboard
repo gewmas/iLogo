@@ -16,9 +16,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lMh-8N-4rM" customClass="draw2D">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="491"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OYx-Y8-oJ7" userLabel="Canvas" customClass="Canvas">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="486"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="50f-3n-iCG">
@@ -47,6 +47,7 @@
                     </view>
                     <toolbarItems/>
                     <connections>
+                        <outlet property="canvas" destination="OYx-Y8-oJ7" id="Ewm-oc-P0k"/>
                         <outlet property="commentTextField" destination="8dH-DR-6F6" id="ZUo-WJ-l5r"/>
                     </connections>
                 </viewController>
