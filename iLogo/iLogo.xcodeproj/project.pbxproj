@@ -38,6 +38,10 @@
 		4C837C00181D6BC00019BF47 /* ScopedExpression.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C837BFF181D6BC00019BF47 /* ScopedExpression.m */; };
 		4C837C03181D6BEB0019BF47 /* RepeatExpression.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C837C02181D6BEB0019BF47 /* RepeatExpression.m */; };
 		4C837C09181D927A0019BF47 /* turtle.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C837C08181D927A0019BF47 /* turtle.png */; };
+		4C837C54181DCF270019BF47 /* SCSlidingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C837C53181DCF270019BF47 /* SCSlidingViewController.m */; };
+		4C837C57181DDCA10019BF47 /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C837C56181DDCA10019BF47 /* MenuViewController.m */; };
+		4C837C5D181DDCFC0019BF47 /* TopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C837C5C181DDCFC0019BF47 /* TopViewController.m */; };
+		4C837C63181DE2E00019BF47 /* ContextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C837C62181DE2E00019BF47 /* ContextViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -103,6 +107,14 @@
 		4C837C01181D6BEB0019BF47 /* RepeatExpression.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RepeatExpression.h; path = model/expression/RepeatExpression.h; sourceTree = "<group>"; };
 		4C837C02181D6BEB0019BF47 /* RepeatExpression.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RepeatExpression.m; path = model/expression/RepeatExpression.m; sourceTree = "<group>"; };
 		4C837C08181D927A0019BF47 /* turtle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = turtle.png; path = asset/turtle.png; sourceTree = "<group>"; };
+		4C837C52181DCF270019BF47 /* SCSlidingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCSlidingViewController.h; sourceTree = "<group>"; };
+		4C837C53181DCF270019BF47 /* SCSlidingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCSlidingViewController.m; sourceTree = "<group>"; };
+		4C837C55181DDCA10019BF47 /* MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MenuViewController.h; path = controller/MenuViewController.h; sourceTree = "<group>"; };
+		4C837C56181DDCA10019BF47 /* MenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MenuViewController.m; path = controller/MenuViewController.m; sourceTree = "<group>"; };
+		4C837C5B181DDCFC0019BF47 /* TopViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TopViewController.h; path = controller/TopViewController.h; sourceTree = "<group>"; };
+		4C837C5C181DDCFC0019BF47 /* TopViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TopViewController.m; path = controller/TopViewController.m; sourceTree = "<group>"; };
+		4C837C61181DE2E00019BF47 /* ContextViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ContextViewController.h; path = controller/ContextViewController.h; sourceTree = "<group>"; };
+		4C837C62181DE2E00019BF47 /* ContextViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ContextViewController.m; path = controller/ContextViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -163,15 +175,11 @@
 			isa = PBXGroup;
 			children = (
 				4C837BF9181CCB360019BF47 /* asset */,
-				4C837BEA181CA49F0019BF47 /* ExpressionHeader.h */,
 				4C837BD9181C88CF0019BF47 /* turtle */,
+				4C837C60181DE0010019BF47 /* storyboard */,
+				4C837C51181DCEED0019BF47 /* controller */,
 				4C837BD2181C7B6D0019BF47 /* model */,
-				4C5427211804CC800043EE23 /* asset */,
 				4C54271C1804C9750043EE23 /* view */,
-				4C837BC2181A2AB90019BF47 /* iPhone.storyboard */,
-				4C48FE2118013C7300DE5F5A /* iLogoViewController.h */,
-				4C48FE2218013C7300DE5F5A /* iLogoViewController.m */,
-				4C837BF7181CC89E0019BF47 /* Images-2.xcassets */,
 				4C48FE1318013C7300DE5F5A /* Supporting Files */,
 			);
 			path = iLogo;
@@ -217,15 +225,6 @@
 			name = view;
 			sourceTree = "<group>";
 		};
-		4C5427211804CC800043EE23 /* asset */ = {
-			isa = PBXGroup;
-			children = (
-				4C837BC5181A2C650019BF47 /* Default-568h@2x.png */,
-				4C5427201804CC410043EE23 /* atomic web.png */,
-			);
-			name = asset;
-			sourceTree = "<group>";
-		};
 		4C837BD2181C7B6D0019BF47 /* model */ = {
 			isa = PBXGroup;
 			children = (
@@ -254,6 +253,7 @@
 		4C837BE3181CA2220019BF47 /* expression */ = {
 			isa = PBXGroup;
 			children = (
+				4C837BEA181CA49F0019BF47 /* ExpressionHeader.h */,
 				4C837BE4181CA2550019BF47 /* Expression.h */,
 				4C837BE5181CA2550019BF47 /* Expression.m */,
 				4C837BE7181CA2680019BF47 /* ForwardExpression.h */,
@@ -277,9 +277,37 @@
 		4C837BF9181CCB360019BF47 /* asset */ = {
 			isa = PBXGroup;
 			children = (
+				4C837BF7181CC89E0019BF47 /* Images-2.xcassets */,
+				4C837BC5181A2C650019BF47 /* Default-568h@2x.png */,
+				4C5427201804CC410043EE23 /* atomic web.png */,
 				4C837C08181D927A0019BF47 /* turtle.png */,
 			);
 			name = asset;
+			sourceTree = "<group>";
+		};
+		4C837C51181DCEED0019BF47 /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				4C48FE2118013C7300DE5F5A /* iLogoViewController.h */,
+				4C48FE2218013C7300DE5F5A /* iLogoViewController.m */,
+				4C837C52181DCF270019BF47 /* SCSlidingViewController.h */,
+				4C837C53181DCF270019BF47 /* SCSlidingViewController.m */,
+				4C837C55181DDCA10019BF47 /* MenuViewController.h */,
+				4C837C56181DDCA10019BF47 /* MenuViewController.m */,
+				4C837C5B181DDCFC0019BF47 /* TopViewController.h */,
+				4C837C5C181DDCFC0019BF47 /* TopViewController.m */,
+				4C837C61181DE2E00019BF47 /* ContextViewController.h */,
+				4C837C62181DE2E00019BF47 /* ContextViewController.m */,
+			);
+			name = controller;
+			sourceTree = "<group>";
+		};
+		4C837C60181DE0010019BF47 /* storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				4C837BC2181A2AB90019BF47 /* iPhone.storyboard */,
+			);
+			name = storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -383,15 +411,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4C837C5D181DDCFC0019BF47 /* TopViewController.m in Sources */,
 				4C48FE1918013C7300DE5F5A /* main.m in Sources */,
 				4C837BD5181C7D8B0019BF47 /* TurtleTrace.m in Sources */,
 				4C837BED181CA5F90019BF47 /* RightExpression.m in Sources */,
 				4C48FE1D18013C7300DE5F5A /* iLogoAppDelegate.m in Sources */,
+				4C837C57181DDCA10019BF47 /* MenuViewController.m in Sources */,
 				4C837BDF181C972F0019BF47 /* Model.m in Sources */,
+				4C837C63181DE2E00019BF47 /* ContextViewController.m in Sources */,
 				4C837BD8181C88C90019BF47 /* Turtle.m in Sources */,
 				4C48FE2318013C7300DE5F5A /* iLogoViewController.m in Sources */,
 				4C837BDC181C88E60019BF47 /* TurtleCommand.m in Sources */,
 				4C837BE2181C973A0019BF47 /* Parser.m in Sources */,
+				4C837C54181DCF270019BF47 /* SCSlidingViewController.m in Sources */,
 				4C837BD1181C755D0019BF47 /* Canvas.m in Sources */,
 				4C837BF3181CA9330019BF47 /* OneParameterExpression.m in Sources */,
 				4C837C03181D6BEB0019BF47 /* RepeatExpression.m in Sources */,

@@ -7,57 +7,26 @@
 //
 
 #import "iLogoViewController.h"
+#import "TopViewController.h"
+#import "MenuViewController.h"
+#import "ContextViewController.h"
+
 #import "GameController.h"
 
-#import "Canvas.h"
 
-#import "Turtle.h"
-#import "TurtleTrace.h"
-#import "TurtleCommand.h"
 
-#import "Model.h"
+@interface iLogoViewController () <SCSlidingViewControllerDelegate>
 
-@interface iLogoViewController ()
-{
-    IBOutlet UITextField *commentTextField;
-//    IBOutlet UIView *canvas;
-}
-
-//@property (strong, nonatomic) GameController* controller;
-
-@property (nonatomic, retain) Canvas *canvas;
-
-@property (nonatomic, retain) UITextField *commentTextField;
-@property (nonatomic) NSString *command;
-
-//@property (nonatomic) TurtleTrace * turtleTrace;
-@property (nonatomic) Turtle *turtle;
-
-@property (nonatomic) double yPositionStore;
-
-@property (nonatomic) Model *model;
 
 @end
 
 
 @implementation iLogoViewController
 
-@synthesize model = _model;
-
-@synthesize canvas = _canvas;
-@synthesize turtle = _turtle;
-
-@synthesize commentTextField;
-
 - (id)init
 {
     self = [super init];
-    if(self != nil){
-        _canvas = [[Canvas alloc] initWithFrame:CGRectMake(0, 0, 100, 100)];
-//        self.controller = [[GameController alloc] init];
-//        _turtleTrace = [[TurtleTrace alloc] init];
-        
-    }
+    
     return self;
 }
 
@@ -65,98 +34,52 @@
 {
     [super viewDidLoad];
 
-    _model = [[Model alloc] init];
-    _turtle = [[Turtle alloc] init];
-//    [_turtle addTurtleCommand:[[TurtleCommand alloc] initWithParameter:100 andY:100]];
-//    [_turtle addTurtleCommand:[[TurtleCommand alloc] initWithParameter:150 andY:100]];
-//    [_turtle addTurtleCommand:[[TurtleCommand alloc] initWithParameter:100 andY:200]];
-//    [_turtle addTurtleCommand:[[TurtleCommand alloc] initWithParameter:198 andY:300]];
+    //Customizing the top view
+    self.topViewOffsetY = 0;
+    
+    //usage:[[UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil] instantiateViewControllerWithIdentifier:@"ViewController"];
+    self.topViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"Top"];
+    self.leftSideViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"Menu"];
+    self.rightSideViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"Context"];
+    
 
-    [_canvas drawTurtle:_turtle];
+    
+    
+    //swip
+    UISwipeGestureRecognizer *rightRecognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(rightSwipeHandle:)];
+    rightRecognizer.direction = UISwipeGestureRecognizerDirectionRight;
+    [rightRecognizer setNumberOfTouchesRequired:1];
+    //add the your gestureRecognizer , where to detect the touch..
+    [self.view addGestureRecognizer:rightRecognizer];
+    
+    UISwipeGestureRecognizer *leftRecognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(leftSwipeHandle:)];
+    leftRecognizer.direction = UISwipeGestureRecognizerDirectionLeft;
+    [leftRecognizer setNumberOfTouchesRequired:1];
+    [self.view addGestureRecognizer:leftRecognizer];
+
+    
     NSLog(@"view did load!");
+
     
 }
 
-- (void) processCommandList
+
+
+#pragma touch
+- (void)rightSwipeHandle:(UISwipeGestureRecognizer*)gestureRecognizer
 {
-    _command = [commentTextField text];
-    if ([_command isEqualToString:@""]) {
-        return;
-    }
-    
-    NSLog(@"Calling model!");
-    [_model updateTrace:_command andTurtle:_turtle];
-//    NSArray *splitArray = [_command componentsSeparatedByString:@" "];
-    
-//    NSLog(@"%@", splitArray);
-    
-//    NSLog(@"%f, %f", [splitArray[0] doubleValue], [splitArray[1] doubleValue]);
-    
-//    [_turtle addTurtleCommand:[[TurtleCommand alloc] initWithParameter:[splitArray[0] doubleValue] andY:[splitArray[1] doubleValue]]];
-//    [_canvas drawTurtle:_turtle];
-    
-    [_canvas setNeedsDisplay];
-    
-    [commentTextField setText:@""];
+    NSLog(@"rightSwipeHandle");
+    [self changeTopViewController:[self.storyboard instantiateViewControllerWithIdentifier:@"Menu"]];
+    [self slideLeft];
 }
 
--(IBAction) doneEditing:(id) sender {
-    [sender resignFirstResponder];
-    
-    [self processCommandList];
-    
-    
-}
-
--(IBAction) bgTouched:(id) sender {
-    NSLog(@"touch bg");
-    [commentTextField resignFirstResponder];
-    
-    [self processCommandList];
-}
-
-- (void)textFieldDidBeginEditing:(UITextField *)textField
+- (void)leftSwipeHandle:(UISwipeGestureRecognizer*)gestureRecognizer
 {
-    //keep a member variable to store where the textField started
-    _yPositionStore = textField.frame.origin.y;
-    
-    //If we begin editing on the text field we need to move it up to make sure we can still
-    //see it when the keyboard is visible.
-    //
-    //I am adding an animation to make this look better
-    [UIView beginAnimations:@"Animate Text Field Up" context:nil];
-    [UIView setAnimationDuration:.3];
-    [UIView setAnimationBeginsFromCurrentState:YES];
-    
-    commentTextField.frame = CGRectMake(commentTextField.frame.origin.x,
-                                        300 , //this is just a number to put it above the keyboard
-                                        commentTextField.frame.size.width,
-                                        commentTextField.frame.size.height);
-    
-    [UIView commitAnimations];
-}
-
-- (void)textFieldDidEndEditing:(UITextField *)textField
-{
-    
-    [UIView beginAnimations:@"Animate Text Field Up" context:nil];
-    [UIView setAnimationDuration:.8];
-    [UIView setAnimationBeginsFromCurrentState:YES];
-    
-    commentTextField.frame = CGRectMake(commentTextField.frame.origin.x,
-                                        _yPositionStore ,
-                                        commentTextField.frame.size.width,
-                                        commentTextField.frame.size.height);
-    
-    [UIView commitAnimations];
+    NSLog(@"leftSwipeHandle");
+    [self changeTopViewController:[self.storyboard instantiateViewControllerWithIdentifier:@"Context"]];
+    [self slideRight];
 }
 
 
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
 
 @end

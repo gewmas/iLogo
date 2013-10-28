@@ -7,10 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SCSlidingViewController.h"
 
-@interface iLogoViewController : UIViewController<UITextFieldDelegate>
-
--(IBAction) doneEditing:(id) sender;
--(IBAction) bgTouched:(id) sender;
+@interface iLogoViewController : SCSlidingViewController<UITextFieldDelegate>
 
 @end

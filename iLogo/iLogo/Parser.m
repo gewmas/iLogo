@@ -41,7 +41,7 @@
 
 - (Expression *)parse:(NSMutableArray*)commandInput
 {
-    NSString *s = [commandInput firstObject];
+    NSString *s = [[commandInput firstObject] lowercaseString];
     
     if ([s isEqualToString:@"fd"]) {
         return [[ForwardExpression alloc] initWithParameter:commandInput andModel:_model];
