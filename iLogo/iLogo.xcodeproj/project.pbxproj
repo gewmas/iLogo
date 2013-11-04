@@ -12,6 +12,7 @@
 		4C2E77D618275C680072F6F0 /* ZeroExpression.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C2E77D518275C680072F6F0 /* ZeroExpression.m */; };
 		4C2E77D918275CF00072F6F0 /* HomeExpression.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C2E77D818275CF00072F6F0 /* HomeExpression.m */; };
 		4C2E77DC18275D050072F6F0 /* ClearScreenExpression.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C2E77DB18275D050072F6F0 /* ClearScreenExpression.m */; };
+		4C2E77DE18280FA90072F6F0 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C2E77DD18280FA90072F6F0 /* Storyboard.storyboard */; };
 		4C48FE0D18013C7300DE5F5A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C48FE0C18013C7300DE5F5A /* Foundation.framework */; };
 		4C48FE0F18013C7300DE5F5A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C48FE0E18013C7300DE5F5A /* CoreGraphics.framework */; };
 		4C48FE1118013C7300DE5F5A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C48FE1018013C7300DE5F5A /* UIKit.framework */; };
@@ -70,6 +71,7 @@
 		4C2E77D818275CF00072F6F0 /* HomeExpression.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HomeExpression.m; path = model/expression/HomeExpression.m; sourceTree = "<group>"; };
 		4C2E77DA18275D050072F6F0 /* ClearScreenExpression.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ClearScreenExpression.h; path = model/expression/ClearScreenExpression.h; sourceTree = "<group>"; };
 		4C2E77DB18275D050072F6F0 /* ClearScreenExpression.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ClearScreenExpression.m; path = model/expression/ClearScreenExpression.m; sourceTree = "<group>"; };
+		4C2E77DD18280FA90072F6F0 /* Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Storyboard.storyboard; path = view/Storyboard.storyboard; sourceTree = "<group>"; };
 		4C48FE0918013C7300DE5F5A /* iLogo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iLogo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C48FE0C18013C7300DE5F5A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		4C48FE0E18013C7300DE5F5A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -234,6 +236,7 @@
 		4C54271C1804C9750043EE23 /* view */ = {
 			isa = PBXGroup;
 			children = (
+				4C2E77DD18280FA90072F6F0 /* Storyboard.storyboard */,
 				4C837BCF181C755D0019BF47 /* Canvas.h */,
 				4C837BD0181C755D0019BF47 /* Canvas.m */,
 			);
@@ -417,6 +420,7 @@
 				4C837BC4181A2AB90019BF47 /* iPhone.storyboard in Resources */,
 				4C837BF8181CC89E0019BF47 /* Images-2.xcassets in Resources */,
 				4C837BC6181A2C650019BF47 /* Default-568h@2x.png in Resources */,
+				4C2E77DE18280FA90072F6F0 /* Storyboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -25,6 +25,13 @@
 @property (nonatomic) NSString *command;
 @property (nonatomic) UIButton *button;
 
+//command area
+@property (nonatomic) NSMutableArray *commandButton;
+@property (nonatomic) NSArray *commandName;
+@property (nonatomic) UISlider *commandSlider;
+@property (nonatomic) UILabel *commandLabel;
+
+
 @property (nonatomic) Turtle *turtle;
 
 @property (nonatomic) double yPositionStore;
@@ -43,6 +50,11 @@
 //model
 @synthesize model = _model;
 @synthesize turtle = _turtle;
+
+
+//command button
+@synthesize commandButton = _commandButton;
+
 
 - (id)init
 {
@@ -84,6 +96,42 @@
     [_button addTarget:self action:@selector(bgTouched:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:_button]; //now _button above canvas!!!
     
+    
+    
+    
+    //button to execute commands
+#define COMMAND_NUMBER 6
+#define COMMAND_BUTTON_HEIGHT 48
+#define COMMAND_BUTTON_WIDTH [[UIScreen mainScreen] bounds].size.width/COMMAND_NUMBER
+    _commandButton = [[NSMutableArray alloc] init];
+    _commandName = @[@"fd", @"bk", @"lt", @"rt", @"cs", @"home"];
+    
+    for (int i = 0; i < [_commandName count]; i++) {
+        UIButton *tempButton = [[UIButton alloc] initWithFrame:CGRectMake(COMMAND_BUTTON_WIDTH*i, [[UIScreen mainScreen] bounds].size.height*canvasRatio-COMMAND_BUTTON_HEIGHT*2, COMMAND_BUTTON_WIDTH, COMMAND_BUTTON_HEIGHT)];
+        [tempButton setTitle:_commandName[i] forState:UIControlStateNormal];
+        [tempButton setBackgroundColor:[UIColor blueColor]];
+        [tempButton addTarget:self action:@selector(commandButtonTouched:) forControlEvents:UIControlEventTouchUpInside];
+        [self.view addSubview:tempButton];
+        [_commandButton addObject:tempButton];
+    }
+    
+    //slider to choose value
+#define COMMAND_SLIDER_HEIGHT COMMAND_BUTTON_HEIGHT
+#define COMMAND_SLIDER_WIDTH [[UIScreen mainScreen] bounds].size.width*2/3
+    _commandSlider = [[UISlider alloc] initWithFrame:CGRectMake(0, [[UIScreen mainScreen] bounds].size.height*canvasRatio-COMMAND_SLIDER_HEIGHT, COMMAND_SLIDER_WIDTH, COMMAND_SLIDER_HEIGHT)];
+    _commandSlider.maximumValue = 200;
+    _commandSlider.value = 90;
+    [_commandSlider addTarget:self action:@selector(sliderValueChange:) forControlEvents:UIControlEventValueChanged];
+    [self.view addSubview:_commandSlider];
+    
+    //label to show slider value
+#define COMMAND_LABEL_HEIGHT COMMAND_BUTTON_HEIGHT
+#define COMMAND_LABEL_WIDTH [[UIScreen mainScreen] bounds].size.width*1/3
+    _commandLabel = [[UILabel alloc] initWithFrame: CGRectMake(COMMAND_SLIDER_WIDTH, [[UIScreen mainScreen] bounds].size.height*canvasRatio-COMMAND_SLIDER_HEIGHT, COMMAND_LABEL_WIDTH, COMMAND_LABEL_HEIGHT)];
+    _commandLabel.text = [[NSString alloc] initWithFormat:@"%d", (int)_commandSlider.value ];
+    [_commandLabel setTextAlignment:NSTextAlignmentCenter];
+    [self.view addSubview:_commandLabel];
+    
     //keyboard textfield
     _commentTextField = [[UITextField alloc] initWithFrame:CGRectMake(0, [[UIScreen mainScreen] bounds].size.height*canvasRatio, [[UIScreen mainScreen] bounds].size.width, [[UIScreen mainScreen] bounds].size.height*(1-canvasRatio))];
     _commentTextField.backgroundColor = [UIColor whiteColor];
@@ -94,7 +142,6 @@
     [_commentTextField setAutocorrectionType:UITextAutocorrectionTypeNo];
     
     [_commentTextField addTarget:self action:@selector(doneEditing:) forControlEvents:(UIControlEventEditingDidEndOnExit)];
-    
     [self.view addSubview:_commentTextField];
     
     _model = [[Model alloc] init];
@@ -176,6 +223,8 @@
     [UIView commitAnimations];
 }
 
+#pragma mark command delegate function
+
 -(IBAction) bgTouched:(id) sender {
     NSLog(@"touch bg");
     [_commentTextField resignFirstResponder];
@@ -187,5 +236,25 @@
     
 }
 
+-(IBAction)commandButtonTouched:(UIButton*)sender
+{
+    NSLog(@"%@", sender.titleLabel.text);
+    
+    NSString *title = sender.titleLabel.text;
+    _command = title;
+    
+    if (![title isEqualToString:@"cs"] && ![title isEqualToString:@"home"]) {
+        _command = [title stringByAppendingString:[[NSString alloc] initWithFormat:@" %d", (int)_commandSlider.value]];
+    }
+    
+    [_model updateTrace:_command andTurtle:_turtle];
+    [_canvas setNeedsDisplay];
+}
+
+-(IBAction)sliderValueChange:(UISlider*)sender
+{
+    NSLog(@"%f", sender.value);
+    _commandLabel.text = [[NSString alloc] initWithFormat:@"%d", (int)_commandSlider.value];
+}
 
 @end
