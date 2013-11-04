@@ -67,7 +67,8 @@
         return [[ClearScreenExpression alloc] initWithParameter:commandInput andModel:_model];
     }
     
-    assert(false);
+    @throw [NSException exceptionWithName:@"Wrong Command" reason:@"Can't find such command." userInfo:nil];
+    
     return nil;
 }
 

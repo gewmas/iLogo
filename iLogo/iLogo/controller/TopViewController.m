@@ -25,11 +25,14 @@
 @property (nonatomic) NSString *command;
 @property (nonatomic) UIButton *button;
 
+@property (nonatomic) UILabel *warningLabel;
+
 //command area
 @property (nonatomic) NSMutableArray *commandButton;
 @property (nonatomic) NSArray *commandName;
 @property (nonatomic) UISlider *commandSlider;
 @property (nonatomic) UILabel *commandLabel;
+
 
 
 @property (nonatomic) Turtle *turtle;
@@ -86,6 +89,8 @@
     self.view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, [[UIScreen mainScreen] bounds].size.width, [[UIScreen mainScreen] bounds].size.height)];
     self.view.backgroundColor = [UIColor blueColor];
     
+    
+    
     //canvas to draw turtle and trace
     _canvas = [[Canvas alloc] initWithFrame:CGRectMake(0, 0, [[UIScreen mainScreen] bounds].size.width, [[UIScreen mainScreen] bounds].size.height*canvasRatio)];
     _canvas.backgroundColor = [UIColor whiteColor];
@@ -114,6 +119,18 @@
         [self.view addSubview:tempButton];
         [_commandButton addObject:tempButton];
     }
+    
+    //warning label
+#define WARNING_LABEL_HEIGHT 48
+#define WARNING_LABEL_WIDTH 300
+    _warningLabel = [[UILabel alloc] initWithFrame: CGRectMake([[UIScreen mainScreen] bounds].size.width/2-WARNING_LABEL_WIDTH/2, [[UIScreen mainScreen] bounds].size.height/2-WARNING_LABEL_WIDTH/2, WARNING_LABEL_WIDTH, WARNING_LABEL_HEIGHT)];
+    _warningLabel.text = @"Wrong Command!";
+    _warningLabel.textColor = [UIColor redColor];
+    [_warningLabel setFont:[UIFont systemFontOfSize:26]];
+    _warningLabel.backgroundColor = [UIColor clearColor];
+    [_warningLabel setTextAlignment:NSTextAlignmentCenter];
+    _warningLabel.hidden = YES;
+    [self.view addSubview:_warningLabel];
     
     //slider to choose value
 #define COMMAND_SLIDER_HEIGHT COMMAND_BUTTON_HEIGHT
@@ -154,6 +171,34 @@
     [_canvas drawTurtle:_turtle];
 }
 
+
+#pragma mark call model
+- (void)callModel
+{
+    @try {
+        [_model updateTrace:_command andTurtle:_turtle];
+    }
+    @catch (NSException *exception) {
+         _warningLabel.hidden = NO;
+        
+        [NSTimer scheduledTimerWithTimeInterval:2
+                                         target:self
+                                       selector:@selector(handleTimer:)
+                                       userInfo:nil
+                                        repeats:NO];
+    }
+    @finally {
+        [_canvas setNeedsDisplay];
+    }
+}
+
+-(void)handleTimer: (NSTimer *) timer
+{
+    _warningLabel.hidden = YES;
+
+}
+
+#pragma mark textfiled input
 - (void) processCommandList
 {
     _command = [_commentTextField text];
@@ -161,31 +206,15 @@
         return;
     }
     
-    NSLog(@"Calling model!");
-    [_model updateTrace:_command andTurtle:_turtle];
-    //    NSArray *splitArray = [_command componentsSeparatedByString:@" "];
-    
-    //    NSLog(@"%@", splitArray);
-    
-    //    NSLog(@"%f, %f", [splitArray[0] doubleValue], [splitArray[1] doubleValue]);
-    
-    //    [_turtle addTurtleCommand:[[TurtleCommand alloc] initWithParameter:[splitArray[0] doubleValue] andY:[splitArray[1] doubleValue]]];
-    //    [_canvas drawTurtle:_turtle];
-    
-    [_canvas setNeedsDisplay];
+    [self callModel];
     
     [_commentTextField setText:@""];
 }
 
 -(IBAction) doneEditing:(id) sender {
     [sender resignFirstResponder];
-    
     [self processCommandList];
-    
-    
 }
-
-
 
 - (void)textFieldDidBeginEditing:(UITextField *)textField
 {
@@ -233,13 +262,10 @@
     if (![[_commentTextField text] isEqualToString:@""]) {
         [self processCommandList];
     }
-    
 }
 
 -(IBAction)commandButtonTouched:(UIButton*)sender
 {
-    NSLog(@"%@", sender.titleLabel.text);
-    
     NSString *title = sender.titleLabel.text;
     _command = title;
     
@@ -247,13 +273,11 @@
         _command = [title stringByAppendingString:[[NSString alloc] initWithFormat:@" %d", (int)_commandSlider.value]];
     }
     
-    [_model updateTrace:_command andTurtle:_turtle];
-    [_canvas setNeedsDisplay];
+    [self callModel];
 }
 
 -(IBAction)sliderValueChange:(UISlider*)sender
 {
-    NSLog(@"%f", sender.value);
     _commandLabel.text = [[NSString alloc] initWithFormat:@"%d", (int)_commandSlider.value];
 }
 
