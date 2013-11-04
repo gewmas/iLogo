@@ -9,6 +9,7 @@
 #import "Model.h"
 
 #import "Expression.h"
+#import "ClearScreenExpression.h"
 
 @interface Model()
 
@@ -55,6 +56,10 @@
 {
     
     for(Expression* expression in expressionList){
+        if ([expression isMemberOfClass:[ClearScreenExpression class]]) {
+            [_turtle clearTurtleTrace];
+        }
+        
         NSMutableArray *turtleCommands = [expression evaluate:[_turtle getLastCommand]];
         
         for(TurtleCommand* turtleCommand in turtleCommands){
@@ -62,6 +67,11 @@
         }
     }
     
+}
+
+- (Turtle*)turtle
+{
+    return _turtle;
 }
 
 

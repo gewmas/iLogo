@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4C2E77D218275AB80072F6F0 /* BackExpression.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C2E77CF18275AB80072F6F0 /* BackExpression.m */; };
+		4C2E77D318275AB80072F6F0 /* LeftExpression.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C2E77D118275AB80072F6F0 /* LeftExpression.m */; };
+		4C2E77D618275C680072F6F0 /* ZeroExpression.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C2E77D518275C680072F6F0 /* ZeroExpression.m */; };
+		4C2E77D918275CF00072F6F0 /* HomeExpression.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C2E77D818275CF00072F6F0 /* HomeExpression.m */; };
+		4C2E77DC18275D050072F6F0 /* ClearScreenExpression.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C2E77DB18275D050072F6F0 /* ClearScreenExpression.m */; };
 		4C48FE0D18013C7300DE5F5A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C48FE0C18013C7300DE5F5A /* Foundation.framework */; };
 		4C48FE0F18013C7300DE5F5A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C48FE0E18013C7300DE5F5A /* CoreGraphics.framework */; };
 		4C48FE1118013C7300DE5F5A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C48FE1018013C7300DE5F5A /* UIKit.framework */; };
@@ -55,6 +60,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4C2E77CE18275AB80072F6F0 /* BackExpression.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BackExpression.h; path = model/expression/BackExpression.h; sourceTree = "<group>"; };
+		4C2E77CF18275AB80072F6F0 /* BackExpression.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BackExpression.m; path = model/expression/BackExpression.m; sourceTree = "<group>"; };
+		4C2E77D018275AB80072F6F0 /* LeftExpression.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LeftExpression.h; path = model/expression/LeftExpression.h; sourceTree = "<group>"; };
+		4C2E77D118275AB80072F6F0 /* LeftExpression.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LeftExpression.m; path = model/expression/LeftExpression.m; sourceTree = "<group>"; };
+		4C2E77D418275C680072F6F0 /* ZeroExpression.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZeroExpression.h; path = model/expression/ZeroExpression.h; sourceTree = "<group>"; };
+		4C2E77D518275C680072F6F0 /* ZeroExpression.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZeroExpression.m; path = model/expression/ZeroExpression.m; sourceTree = "<group>"; };
+		4C2E77D718275CF00072F6F0 /* HomeExpression.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HomeExpression.h; path = model/expression/HomeExpression.h; sourceTree = "<group>"; };
+		4C2E77D818275CF00072F6F0 /* HomeExpression.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HomeExpression.m; path = model/expression/HomeExpression.m; sourceTree = "<group>"; };
+		4C2E77DA18275D050072F6F0 /* ClearScreenExpression.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ClearScreenExpression.h; path = model/expression/ClearScreenExpression.h; sourceTree = "<group>"; };
+		4C2E77DB18275D050072F6F0 /* ClearScreenExpression.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ClearScreenExpression.m; path = model/expression/ClearScreenExpression.m; sourceTree = "<group>"; };
 		4C48FE0918013C7300DE5F5A /* iLogo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iLogo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C48FE0C18013C7300DE5F5A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		4C48FE0E18013C7300DE5F5A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -253,6 +268,10 @@
 		4C837BE3181CA2220019BF47 /* expression */ = {
 			isa = PBXGroup;
 			children = (
+				4C2E77CE18275AB80072F6F0 /* BackExpression.h */,
+				4C2E77CF18275AB80072F6F0 /* BackExpression.m */,
+				4C2E77D018275AB80072F6F0 /* LeftExpression.h */,
+				4C2E77D118275AB80072F6F0 /* LeftExpression.m */,
 				4C837BEA181CA49F0019BF47 /* ExpressionHeader.h */,
 				4C837BE4181CA2550019BF47 /* Expression.h */,
 				4C837BE5181CA2550019BF47 /* Expression.m */,
@@ -270,6 +289,12 @@
 				4C837BFF181D6BC00019BF47 /* ScopedExpression.m */,
 				4C837C01181D6BEB0019BF47 /* RepeatExpression.h */,
 				4C837C02181D6BEB0019BF47 /* RepeatExpression.m */,
+				4C2E77D418275C680072F6F0 /* ZeroExpression.h */,
+				4C2E77D518275C680072F6F0 /* ZeroExpression.m */,
+				4C2E77D718275CF00072F6F0 /* HomeExpression.h */,
+				4C2E77D818275CF00072F6F0 /* HomeExpression.m */,
+				4C2E77DA18275D050072F6F0 /* ClearScreenExpression.h */,
+				4C2E77DB18275D050072F6F0 /* ClearScreenExpression.m */,
 			);
 			name = expression;
 			sourceTree = "<group>";
@@ -412,15 +437,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				4C837C5D181DDCFC0019BF47 /* TopViewController.m in Sources */,
+				4C2E77D318275AB80072F6F0 /* LeftExpression.m in Sources */,
+				4C2E77D918275CF00072F6F0 /* HomeExpression.m in Sources */,
 				4C48FE1918013C7300DE5F5A /* main.m in Sources */,
+				4C2E77D618275C680072F6F0 /* ZeroExpression.m in Sources */,
 				4C837BD5181C7D8B0019BF47 /* TurtleTrace.m in Sources */,
 				4C837BED181CA5F90019BF47 /* RightExpression.m in Sources */,
 				4C48FE1D18013C7300DE5F5A /* iLogoAppDelegate.m in Sources */,
 				4C837C57181DDCA10019BF47 /* MenuViewController.m in Sources */,
+				4C2E77DC18275D050072F6F0 /* ClearScreenExpression.m in Sources */,
 				4C837BDF181C972F0019BF47 /* Model.m in Sources */,
 				4C837C63181DE2E00019BF47 /* ContextViewController.m in Sources */,
 				4C837BD8181C88C90019BF47 /* Turtle.m in Sources */,
 				4C48FE2318013C7300DE5F5A /* iLogoViewController.m in Sources */,
+				4C2E77D218275AB80072F6F0 /* BackExpression.m in Sources */,
 				4C837BDC181C88E60019BF47 /* TurtleCommand.m in Sources */,
 				4C837BE2181C973A0019BF47 /* Parser.m in Sources */,
 				4C837C54181DCF270019BF47 /* SCSlidingViewController.m in Sources */,

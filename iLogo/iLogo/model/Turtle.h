@@ -15,5 +15,6 @@
 - (void)addTurtleTrace:(TurtleTrace *)turtleTrace;
 - (void)addTurtleCommand:(TurtleCommand *)turtleCommand;
 - (TurtleCommand*)getLastCommand;
+- (void)clearTurtleTrace;
 
 @end

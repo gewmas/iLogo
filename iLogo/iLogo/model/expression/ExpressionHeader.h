@@ -10,10 +10,16 @@
 #define iLogo_ExpressionHeader_h
 
 #import "Expression.h"
+
 #import "ForwardExpression.h"
+#import "BackExpression.h"
 #import "RightExpression.h"
+#import "LeftExpression.h"
 
 #import "RepeatExpression.h"
+
+#import "HomeExpression.h"
+#import "ClearScreenExpression.h"
 
 #import "VariableExpression.h"
 

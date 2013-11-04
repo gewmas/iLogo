@@ -53,4 +53,9 @@
     return [[_turtleTrace turtleCommand] lastObject];
 }
 
+- (void)clearTurtleTrace
+{
+    [_turtleTrace clearTurtleCommand];
+}
+
 @end

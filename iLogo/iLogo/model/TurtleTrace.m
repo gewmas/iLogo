@@ -39,4 +39,9 @@
     [_turtleCommand addObject:turtleCommand];
 }
 
+- (void)clearTurtleCommand
+{
+    [_turtleCommand removeAllObjects];
+}
+
 @end

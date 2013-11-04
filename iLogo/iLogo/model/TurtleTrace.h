@@ -14,5 +14,6 @@
 
 - (NSMutableArray *)turtleCommand;
 - (void)addTurtleCommand:(TurtleCommand *)turtleCommand;
+- (void)clearTurtleCommand;
 
 @end

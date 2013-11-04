@@ -16,6 +16,7 @@
 
 - (void)updateTrace:(NSString*)userInput andTurtle:(Turtle*)turtle;
 - (Parser*)parser;
+- (Turtle*)turtle;
 
 
 @end

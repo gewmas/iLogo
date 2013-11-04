@@ -46,12 +46,25 @@
     if ([s isEqualToString:@"fd"]) {
         return [[ForwardExpression alloc] initWithParameter:commandInput andModel:_model];
     }
+    else if ([s isEqualToString:@"bk"]) {
+        return [[BackExpression alloc] initWithParameter:commandInput andModel:_model];
+    }
     else if([s isEqualToString:@"rt"]){
         return [[RightExpression alloc] initWithParameter:commandInput andModel:_model];
+    }
+    else if([s isEqualToString:@"lt"]){
+        return [[LeftExpression alloc] initWithParameter:commandInput andModel:_model];
     }
     
     else if([s isEqualToString:@"repeat"]){
         return [[RepeatExpression alloc] initWithParameter:commandInput andModel:_model];
+    }
+    
+    else if([s isEqualToString:@"home"]){
+        return [[HomeExpression alloc] initWithParameter:commandInput andModel:_model];
+    }
+    else if([s isEqualToString:@"cs"]){
+        return [[ClearScreenExpression alloc] initWithParameter:commandInput andModel:_model];
     }
     
     assert(false);
