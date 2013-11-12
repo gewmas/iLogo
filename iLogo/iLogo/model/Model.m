@@ -14,7 +14,6 @@
 @interface Model()
 
 @property (nonatomic) Parser* parser;
-@property (nonatomic) Turtle *turtle;
 
 @end
 
@@ -39,9 +38,8 @@
     return _parser;
 }
 
-- (void)updateTrace:(NSString*)userInput andTurtle:(Turtle*)turtle
+- (void)updateTrace:(NSString*)userInput andActiveTurtles:(NSMutableArray*)activeTurtles
 {
-    _turtle = turtle;
     
     userInput = [userInput stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
     NSArray *array = [userInput componentsSeparatedByString:@" "];
@@ -49,30 +47,28 @@
 
     NSMutableArray *expressionList = [_parser execute:splitArray];
     
-    [self createTraceForTurtles:expressionList];
+    [self createTraceForTurtles:expressionList andActiveTurtles:activeTurtles];
 }
 
-- (void)createTraceForTurtles:(NSMutableArray*)expressionList
+- (void)createTraceForTurtles:(NSMutableArray*)expressionList andActiveTurtles:(NSMutableArray*)activeTurtles
 {
-    
-    for(Expression* expression in expressionList){
-        if ([expression isMemberOfClass:[ClearScreenExpression class]]) {
-            [_turtle clearTurtleTrace];
-        }
-        
-        NSMutableArray *turtleCommands = [expression evaluate:[_turtle getLastCommand]];
-        
-        for(TurtleCommand* turtleCommand in turtleCommands){
-            [_turtle addTurtleCommand:turtleCommand];
+    for(Turtle *activeTurtle in activeTurtles){
+        for(Expression* expression in expressionList){
+            if ([expression isMemberOfClass:[ClearScreenExpression class]]) {
+                [activeTurtle clearTurtleTrace];
+            }
+            
+            NSMutableArray *turtleCommands = [expression evaluate:[activeTurtle getLastCommand]];
+            
+            for(TurtleCommand* turtleCommand in turtleCommands){
+                [activeTurtle addTurtleCommand:turtleCommand];
+            }
         }
     }
-    
+
 }
 
-- (Turtle*)turtle
-{
-    return _turtle;
-}
+
 
 
 @end

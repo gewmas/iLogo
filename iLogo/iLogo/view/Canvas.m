@@ -15,9 +15,10 @@ typedef enum{
 @interface Canvas()
 
 @property (nonatomic) int val;
-@property (nonatomic) Turtle *turtle;
 
-@property (nonatomic) UIImageView *animationView;
+@property (nonatomic) NSMutableArray *turtles;
+@property (nonatomic) NSMutableDictionary *animationViews;
+@property (nonatomic) UIImageView *currentAnimationView;
 
 @property (nonatomic) DIRECTION d;
 
@@ -25,35 +26,35 @@ typedef enum{
 
 @implementation Canvas
 
+@synthesize turtles = _turtles;
+
 - (id)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
     if (self) {
-        // Initialization code
+        _animationViews = [[NSMutableDictionary alloc] init];
     }
     return self;
 }
 
-
-- (void)test
+- (void)updateTurtles:(NSMutableArray*)turtles
 {
-    NSLog(@"Canvas Test!");
+    //clear previous view
+    for(UIImageView *imageView in _animationViews){
+        [imageView removeFromSuperview];
+    }
+    
+    _turtles = turtles;
 }
 
-- (void) setNum : (int)temp
-{
-    _val = temp;
-}
-
-- (void)drawTurtle:(Turtle*)turtle
-{
-    _turtle = turtle;
-}
-
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
 - (void)drawRect:(CGRect)rect {
-    NSMutableArray *turtleCommand = [[_turtle turtleTrace] turtleCommand];
+    for(Turtle *turtle in _turtles){
+        [self drawTurtle:turtle andIndex:[NSString stringWithFormat:@"%d", [_turtles indexOfObject:turtle]]];
+    }
+}
+
+- (void)drawTurtle:(Turtle*)turtle andIndex:(NSString*)index{
+    NSMutableArray *turtleCommand = [[turtle turtleTrace] turtleCommand];
     CGContextRef context = UIGraphicsGetCurrentContext();
     CGContextSetLineWidth(context, 10);
 
@@ -107,14 +108,22 @@ typedef enum{
                              image2,
                              image3,
                              nil];
-    [_animationView removeFromSuperview];
-    _animationView=[[UIImageView alloc]initWithFrame:CGRectMake(prevX-16, prevY-16,32, 32)];
-//    _animationView.backgroundColor=[UIColor purpleColor];
-    _animationView.animationImages=animationArray;
-    _animationView.animationDuration=1.5;
-    _animationView.animationRepeatCount=0;
-    [_animationView startAnimating];
-    [self addSubview:_animationView];
+    
+    //check current turtle has previous animationivew
+    UIImageView *imageView = _animationViews[index];
+    if (imageView != nil) {
+        [imageView removeFromSuperview];
+    }
+    
+    
+    imageView = [[UIImageView alloc]initWithFrame:CGRectMake(prevX-16, prevY-16,32, 32)];
+    [_animationViews setValue:imageView forKey:index];
+    
+    imageView.animationImages=animationArray;
+    imageView.animationDuration=1.5;
+    imageView.animationRepeatCount=0;
+    [imageView startAnimating];
+    [self addSubview:imageView];
  
 }
 

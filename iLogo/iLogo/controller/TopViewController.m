@@ -9,6 +9,7 @@
 #import "TopViewController.h"
 #import "Canvas.h"
 
+#import "Workspace.h"
 #import "Turtle.h"
 #import "TurtleTrace.h"
 #import "TurtleCommand.h"
@@ -33,8 +34,8 @@
 @property (nonatomic) UISlider *commandSlider;
 @property (nonatomic) UILabel *commandLabel;
 
-
-
+@property (nonatomic) NSMutableArray *workspaces;
+@property (nonatomic) Workspace *currentWorkspace;
 @property (nonatomic) Turtle *turtle;
 
 @property (nonatomic) double yPositionStore;
@@ -57,35 +58,21 @@
 
 //command button
 @synthesize commandButton = _commandButton;
+@synthesize workspaces = _workspaces;
 
-
-- (id)init
+- (void)setupVariable
 {
-    self = [super init];
+    _workspaces = [[NSMutableArray alloc] init];
+    [_workspaces addObject:[[Workspace alloc] init]];
+    _currentWorkspace = [_workspaces objectAtIndex:0];
     
-    if (self) {
-        self.view = [[Canvas alloc] initWithFrame:CGRectMake(0, 0, 100, 100)];
-        self.view.backgroundColor = [UIColor purpleColor];
-    }
-    
-    return self;
-}
-
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
-
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
+    _model = [[Model alloc] init];
     
     canvasRatio = 0.9;
-    
+}
+
+- (void)setupView
+{
     self.view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, [[UIScreen mainScreen] bounds].size.width, [[UIScreen mainScreen] bounds].size.height)];
     self.view.backgroundColor = [UIColor blueColor];
     
@@ -100,8 +87,6 @@
     _button = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, [[UIScreen mainScreen] bounds].size.width, [[UIScreen mainScreen] bounds].size.height)];
     [_button addTarget:self action:@selector(bgTouched:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:_button]; //now _button above canvas!!!
-    
-    
     
     
     //button to execute commands
@@ -119,6 +104,14 @@
         [self.view addSubview:tempButton];
         [_commandButton addObject:tempButton];
     }
+    
+    //button to add turtle
+    UIButton *addTurtleButton = [[UIButton alloc] initWithFrame:CGRectMake(COMMAND_BUTTON_WIDTH*0, [[UIScreen mainScreen] bounds].size.height*canvasRatio-COMMAND_BUTTON_HEIGHT*3, COMMAND_BUTTON_WIDTH, COMMAND_BUTTON_HEIGHT)];
+    [addTurtleButton setTitle:@"Add" forState:UIControlStateNormal];
+    [addTurtleButton setBackgroundColor:[UIColor greenColor]];
+    [addTurtleButton addTarget:self action:@selector(createTurtle:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:addTurtleButton];
+
     
     //warning label
 #define WARNING_LABEL_HEIGHT 48
@@ -160,15 +153,14 @@
     
     [_commentTextField addTarget:self action:@selector(doneEditing:) forControlEvents:(UIControlEventEditingDidEndOnExit)];
     [self.view addSubview:_commentTextField];
-    
-    _model = [[Model alloc] init];
-    _turtle = [[Turtle alloc] init];
-//    [_turtle addTurtleCommand:[[TurtleCommand alloc] initWithParameter:100 andY:100]];
-//    [_turtle addTurtleCommand:[[TurtleCommand alloc] initWithParameter:150 andY:100]];
-//    [_turtle addTurtleCommand:[[TurtleCommand alloc] initWithParameter:100 andY:200]];
-//    [_turtle addTurtleCommand:[[TurtleCommand alloc] initWithParameter:198 andY:300]];
-    
-    [_canvas drawTurtle:_turtle];
+}
+
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    [self setupVariable];
+    [self setupView];
+    [_canvas updateTurtles:[_currentWorkspace activeTurtles]];
 }
 
 
@@ -176,7 +168,7 @@
 - (void)callModel
 {
     @try {
-        [_model updateTrace:_command andTurtle:_turtle];
+        [_model updateTrace:_command andActiveTurtles:[_currentWorkspace activeTurtles]];
     }
     @catch (NSException *exception) {
          _warningLabel.hidden = NO;
@@ -279,6 +271,12 @@
 -(IBAction)sliderValueChange:(UISlider*)sender
 {
     _commandLabel.text = [[NSString alloc] initWithFormat:@"%d", (int)_commandSlider.value];
+}
+
+-(IBAction)createTurtle:(id)sender
+{
+    [_currentWorkspace addTurtle:[[Turtle alloc] init]];
+    [_canvas setNeedsDisplay];
 }
 
 @end

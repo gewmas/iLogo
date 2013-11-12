@@ -10,13 +10,7 @@
 #import "Turtle.h"
 
 @interface Canvas : UIView
-{
-    
-}
 
-- (void)drawTurtle:(Turtle*)turtle;
-
-- (void) test;
-- (void) setNum : (int)temp;
+- (void)updateTurtles:(NSMutableArray*)turtles;
 
 @end

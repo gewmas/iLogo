@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #include "TurtleTrace.h"
 
-@interface Turtle : NSObject
+@interface Turtle : NSObject<NSCopying>
 
 - (TurtleTrace *)turtleTrace;
 - (void)addTurtleTrace:(TurtleTrace *)turtleTrace;

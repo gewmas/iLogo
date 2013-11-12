@@ -29,6 +29,17 @@
     return self;
 }
 
+- (id)copyWithZone:(NSZone *)zone
+{
+    id copy = [[[self class] alloc] init];
+    
+    if (copy) {
+        // Copy NSObject subclasses
+    }
+    
+    return copy;
+}
+
 - (TurtleTrace *)turtleTrace
 {
     return _turtleTrace;

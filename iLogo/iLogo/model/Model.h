@@ -14,7 +14,7 @@
 
 @interface Model : NSObject
 
-- (void)updateTrace:(NSString*)userInput andTurtle:(Turtle*)turtle;
+- (void)updateTrace:(NSString*)userInput andActiveTurtles:(NSMutableArray*)activeTurtles;
 - (Parser*)parser;
 - (Turtle*)turtle;
 
