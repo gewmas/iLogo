@@ -7,13 +7,18 @@
 //
 
 #import "TopViewController.h"
-#import "Canvas.h"
 
+//view
+#import "Canvas.h"
+#import "SlideMenuView.h"
+
+//turtle
 #import "Workspace.h"
 #import "Turtle.h"
 #import "TurtleTrace.h"
 #import "TurtleCommand.h"
 
+//model
 #import "Model.h"
 
 @interface TopViewController ()
@@ -88,22 +93,27 @@
     [_button addTarget:self action:@selector(bgTouched:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:_button]; //now _button above canvas!!!
     
-    
+
     //button to execute commands
 #define COMMAND_NUMBER 6
 #define COMMAND_BUTTON_HEIGHT 48
 #define COMMAND_BUTTON_WIDTH [[UIScreen mainScreen] bounds].size.width/COMMAND_NUMBER
+    // Create buttons for the sliding menu
     _commandButton = [[NSMutableArray alloc] init];
     _commandName = @[@"fd", @"bk", @"lt", @"rt", @"cs", @"home"];
     
     for (int i = 0; i < [_commandName count]; i++) {
-        UIButton *tempButton = [[UIButton alloc] initWithFrame:CGRectMake(COMMAND_BUTTON_WIDTH*i, [[UIScreen mainScreen] bounds].size.height*canvasRatio-COMMAND_BUTTON_HEIGHT*2, COMMAND_BUTTON_WIDTH, COMMAND_BUTTON_HEIGHT)];
+        UIButton *tempButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, COMMAND_BUTTON_WIDTH, COMMAND_BUTTON_HEIGHT)];
         [tempButton setTitle:_commandName[i] forState:UIControlStateNormal];
         [tempButton setBackgroundColor:[UIColor blueColor]];
         [tempButton addTarget:self action:@selector(commandButtonTouched:) forControlEvents:UIControlEventTouchUpInside];
-        [self.view addSubview:tempButton];
+//        [self.view addSubview:tempButton];
         [_commandButton addObject:tempButton];
     }
+    
+    //create slideMenu view - change width/2 when more buttons
+    SlideMenuView *slideMenuView = [[SlideMenuView alloc] initWithFrameColorAndButtons:CGRectMake(0.0f, [[UIScreen mainScreen] bounds].size.height*canvasRatio-COMMAND_BUTTON_HEIGHT*2, [[UIScreen mainScreen] bounds].size.width/2,  COMMAND_BUTTON_HEIGHT) backgroundColor:[UIColor blackColor]  buttons:_commandButton];
+    [self.view addSubview:slideMenuView];
     
     //button to add turtle
     UIButton *addTurtleButton = [[UIButton alloc] initWithFrame:CGRectMake(COMMAND_BUTTON_WIDTH*0, [[UIScreen mainScreen] bounds].size.height*canvasRatio-COMMAND_BUTTON_HEIGHT*3, COMMAND_BUTTON_WIDTH, COMMAND_BUTTON_HEIGHT)];

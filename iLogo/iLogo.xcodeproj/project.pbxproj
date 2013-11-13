@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4C04A5221831E03C008C4930 /* Workspace.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C04A5211831E03C008C4930 /* Workspace.m */; };
+		4C04A56E18332BB5008C4930 /* SlideMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C04A56D18332BB5008C4930 /* SlideMenuView.m */; };
 		4C2E77D218275AB80072F6F0 /* BackExpression.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C2E77CF18275AB80072F6F0 /* BackExpression.m */; };
 		4C2E77D318275AB80072F6F0 /* LeftExpression.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C2E77D118275AB80072F6F0 /* LeftExpression.m */; };
 		4C2E77D618275C680072F6F0 /* ZeroExpression.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C2E77D518275C680072F6F0 /* ZeroExpression.m */; };
@@ -64,6 +65,8 @@
 /* Begin PBXFileReference section */
 		4C04A5201831E03C008C4930 /* Workspace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Workspace.h; path = turtle/Workspace.h; sourceTree = "<group>"; };
 		4C04A5211831E03C008C4930 /* Workspace.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Workspace.m; path = turtle/Workspace.m; sourceTree = "<group>"; };
+		4C04A56C18332BB5008C4930 /* SlideMenuView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SlideMenuView.h; sourceTree = "<group>"; };
+		4C04A56D18332BB5008C4930 /* SlideMenuView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SlideMenuView.m; sourceTree = "<group>"; };
 		4C2E77CE18275AB80072F6F0 /* BackExpression.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BackExpression.h; path = model/expression/BackExpression.h; sourceTree = "<group>"; };
 		4C2E77CF18275AB80072F6F0 /* BackExpression.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BackExpression.m; path = model/expression/BackExpression.m; sourceTree = "<group>"; };
 		4C2E77D018275AB80072F6F0 /* LeftExpression.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LeftExpression.h; path = model/expression/LeftExpression.h; sourceTree = "<group>"; };
@@ -242,6 +245,8 @@
 				4C2E77DD18280FA90072F6F0 /* Storyboard.storyboard */,
 				4C837BCF181C755D0019BF47 /* Canvas.h */,
 				4C837BD0181C755D0019BF47 /* Canvas.m */,
+				4C04A56C18332BB5008C4930 /* SlideMenuView.h */,
+				4C04A56D18332BB5008C4930 /* SlideMenuView.m */,
 			);
 			name = view;
 			sourceTree = "<group>";
@@ -456,6 +461,7 @@
 				4C837C57181DDCA10019BF47 /* MenuViewController.m in Sources */,
 				4C2E77DC18275D050072F6F0 /* ClearScreenExpression.m in Sources */,
 				4C837BDF181C972F0019BF47 /* Model.m in Sources */,
+				4C04A56E18332BB5008C4930 /* SlideMenuView.m in Sources */,
 				4C837C63181DE2E00019BF47 /* ContextViewController.m in Sources */,
 				4C837BD8181C88C90019BF47 /* Turtle.m in Sources */,
 				4C48FE2318013C7300DE5F5A /* iLogoViewController.m in Sources */,
