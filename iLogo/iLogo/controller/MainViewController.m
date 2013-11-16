@@ -6,7 +6,7 @@
 //  Copyright (c) 2013 Yuhua Mai. All rights reserved.
 //
 
-#import "TopViewController.h"
+#import "MainViewController.h"
 
 //view
 #import "Canvas.h"
@@ -21,7 +21,7 @@
 //model
 #import "Model.h"
 
-@interface TopViewController ()
+@interface MainViewController ()
 {
     double canvasRatio;
 }
@@ -49,7 +49,7 @@
 
 @end
 
-@implementation TopViewController
+@implementation MainViewController
 
 //view
 @synthesize canvas = _canvas;
@@ -157,7 +157,7 @@
     _commentTextField.backgroundColor = [UIColor whiteColor];
     _commentTextField.frame = CGRectMake(10, [[UIScreen mainScreen] bounds].size.height*canvasRatio+10, [[UIScreen mainScreen] bounds].size.width-20, [[UIScreen mainScreen] bounds].size.height*(1-canvasRatio)-20);
     [_commentTextField setBorderStyle:UITextBorderStyleRoundedRect];
-    _commentTextField.delegate = self;
+    _commentTextField.delegate = (id)self;
     _commentTextField.placeholder = @"<Enter Command>";
     [_commentTextField setAutocorrectionType:UITextAutocorrectionTypeNo];
     

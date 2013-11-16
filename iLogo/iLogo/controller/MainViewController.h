@@ -1,5 +1,5 @@
 //
-//  ContextViewController.h
+//  TopViewController.h
 //  iLogo
 //
 //  Created by Yuhua Mai on 10/27/13.
@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ContextViewController : UIViewController
+@interface MainViewController : UIViewController
 
 @end
+

@@ -49,7 +49,7 @@ typedef enum{
 
 - (void)drawRect:(CGRect)rect {
     for(Turtle *turtle in _turtles){
-        [self drawTurtle:turtle andIndex:[NSString stringWithFormat:@"%d", [_turtles indexOfObject:turtle]]];
+        [self drawTurtle:turtle andIndex:[NSString stringWithFormat:@"%lu", (unsigned long)[_turtles indexOfObject:turtle]]];
     }
 }
 

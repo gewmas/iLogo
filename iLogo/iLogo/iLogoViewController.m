@@ -7,9 +7,9 @@
 //
 
 #import "iLogoViewController.h"
-#import "TopViewController.h"
-#import "MenuViewController.h"
-#import "ContextViewController.h"
+#import "MainViewController.h"
+#import "LeftViewController.h"
+#import "RightViewController.h"
 
 #import "GameController.h"
 
@@ -39,28 +39,26 @@
     
     //usage:[[UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil] instantiateViewControllerWithIdentifier:@"ViewController"];
     self.topViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"Top"];
-    self.leftSideViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"Menu"];
-    self.rightSideViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"Context"];
+    self.leftSideViewController = [[LeftViewController alloc] initWithStyle:UITableViewStylePlain];
+    self.rightSideViewController = [[RightViewController alloc] initWithStyle:UITableViewStyleGrouped];
     
 
     
     
     //swip
-    UISwipeGestureRecognizer *rightRecognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(rightSwipeHandle:)];
-    rightRecognizer.direction = UISwipeGestureRecognizerDirectionRight;
-    [rightRecognizer setNumberOfTouchesRequired:1];
-    //add the your gestureRecognizer , where to detect the touch..
-    [self.view addGestureRecognizer:rightRecognizer];
-    
-    UISwipeGestureRecognizer *leftRecognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(leftSwipeHandle:)];
-    leftRecognizer.direction = UISwipeGestureRecognizerDirectionLeft;
-    [leftRecognizer setNumberOfTouchesRequired:1];
-    [self.view addGestureRecognizer:leftRecognizer];
+   UISwipeGestureRecognizer *rightRecognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(rightSwipeHandle:)];
+   rightRecognizer.direction = UISwipeGestureRecognizerDirectionRight;
+   [rightRecognizer setNumberOfTouchesRequired:1];
+   //add the your gestureRecognizer , where to detect the touch..
+   [self.view addGestureRecognizer:rightRecognizer];
+
+   UISwipeGestureRecognizer *leftRecognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(leftSwipeHandle:)];
+   leftRecognizer.direction = UISwipeGestureRecognizerDirectionLeft;
+   [leftRecognizer setNumberOfTouchesRequired:1];
+   [self.view addGestureRecognizer:leftRecognizer];
 
     
     NSLog(@"view did load!");
-
-    
 }
 
 
@@ -68,16 +66,16 @@
 #pragma touch
 - (void)rightSwipeHandle:(UISwipeGestureRecognizer*)gestureRecognizer
 {
-    NSLog(@"rightSwipeHandle");
-    [self changeTopViewController:[self.storyboard instantiateViewControllerWithIdentifier:@"Menu"]];
-    [self slideLeft];
+   NSLog(@"rightSwipeHandle");
+   [self changeTopViewController:[self.storyboard instantiateViewControllerWithIdentifier:@"Menu"]];
+   [self slideLeft];
 }
 
 - (void)leftSwipeHandle:(UISwipeGestureRecognizer*)gestureRecognizer
 {
-    NSLog(@"leftSwipeHandle");
-    [self changeTopViewController:[self.storyboard instantiateViewControllerWithIdentifier:@"Context"]];
-    [self slideRight];
+   NSLog(@"leftSwipeHandle");
+   [self changeTopViewController:[self.storyboard instantiateViewControllerWithIdentifier:@"Context"]];
+   [self slideRight];
 }
 
 
