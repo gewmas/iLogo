@@ -15,7 +15,7 @@
 
 
 
-@interface iLogoViewController () <SCSlidingViewControllerDelegate>
+@interface iLogoViewController () <SCSlidingViewControllerDelegate, LeftViewControllerDelegate>
 
 
 @end
@@ -38,13 +38,14 @@
     self.topViewOffsetY = 0;
     
     //usage:[[UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil] instantiateViewControllerWithIdentifier:@"ViewController"];
-    self.topViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"Top"];
-    self.leftSideViewController = [[LeftViewController alloc] initWithStyle:UITableViewStylePlain];
-    self.rightSideViewController = [[RightViewController alloc] initWithStyle:UITableViewStyleGrouped];
+    MainViewController *mainController = [self.storyboard instantiateViewControllerWithIdentifier:@"Top"];
+    self.topViewController = mainController;
+    self.leftSideViewController = [[LeftViewController alloc] initWithDefaultMainViewController:mainController forDelegate:self];
+//    self.rightSideViewController = [[RightViewController alloc] initWithStyle:UITableViewStyleGrouped];
     
 
     
-    
+    /*
     //swip
    UISwipeGestureRecognizer *rightRecognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(rightSwipeHandle:)];
    rightRecognizer.direction = UISwipeGestureRecognizerDirectionRight;
@@ -56,13 +57,13 @@
    leftRecognizer.direction = UISwipeGestureRecognizerDirectionLeft;
    [leftRecognizer setNumberOfTouchesRequired:1];
    [self.view addGestureRecognizer:leftRecognizer];
-
+     */
     
     NSLog(@"view did load!");
 }
 
 
-
+/*
 #pragma touch
 - (void)rightSwipeHandle:(UISwipeGestureRecognizer*)gestureRecognizer
 {
@@ -77,7 +78,13 @@
    [self changeTopViewController:[self.storyboard instantiateViewControllerWithIdentifier:@"Context"]];
    [self slideRight];
 }
+*/
 
+#pragma mark delegate method
+- (void)addMainViewController : (MainViewController*)controller
+{
+    self.topViewController = controller;
+}
 
 
 @end

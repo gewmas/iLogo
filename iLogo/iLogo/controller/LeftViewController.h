@@ -8,6 +8,20 @@
 
 #import <UIKit/UIKit.h>
 
+@class iLogoViewController;
+@class LeftViewController;
+@class MainViewController;
+
+@protocol LeftViewControllerDelegate <NSObject>
+
+- (void)addMainViewController : (MainViewController*)controller;
+
+@end
+
 @interface LeftViewController : UITableViewController
+
+@property (nonatomic, weak) id <LeftViewControllerDelegate> delegate;
+
+- (id)initWithDefaultMainViewController:(MainViewController*)mainViewController forDelegate:(id<LeftViewControllerDelegate>)delegate;
 
 @end
